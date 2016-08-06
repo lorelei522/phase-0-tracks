@@ -10,3 +10,5 @@
 	Commit is when you make save points in Git. A good commit message is one that is detailed. It will let the reader know "oh they made this change or that change".
 * What is a merge conflict?
 	Sometimes Git will get confused when you try to merge a file where maybe the same line in the code was edited by 2 people. Git doesn't understand what to do because changes have been made maybe in the same place. That is when you as the programmer need to let it know which is right. 
+
+	Change is good for the soul
