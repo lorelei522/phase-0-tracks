@@ -16,3 +16,11 @@ Our CSS Pseudoselector Rule: It changes the first letter of each paragraph to a 
 p::first-letter {
     color: 	#7FFF00;
 }
+
+
+/* How we used CSS to select the child element in another element.
+Li's in a unorganized list would turn blue but Li's remain the same in
+a organized list*/
+ul > li {
+	color: blue;
+}
