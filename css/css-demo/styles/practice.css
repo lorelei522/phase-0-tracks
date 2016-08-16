@@ -9,3 +9,10 @@ background-color: #e9e5dc;
 .list {
 font-size: 0.8em;
 }
+
+/*
+Our CSS Pseudoselector Rule: It changes the first letter of each paragraph to a fun green;
+*/
+p::first-letter {
+    color: 	#7FFF00;
+}
