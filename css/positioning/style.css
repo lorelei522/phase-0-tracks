@@ -1,19 +1,22 @@
-.FinalOctopus {
-	margin-top: 50px;
+#FinalOctopus {
+	position: relative;
 	text-align: center;
+
 }
 
-.hat {
-  position: absolute;
-  top: 0px;
-}
-
-.glasses {
+#octopus {
 	position: absolute;
-	top: 40px;	
+	z-index: -1;
+	top: 125px;
 }
-
-.octopus {
+#hat {
 	position: absolute;
-	top: 80px
+	z-index: 0;
+	top: 30px;
+}
+#glasses {
+	position: absolute;
+	z-index: 1;
+	left: 50px;
+	top:225px;
 }
