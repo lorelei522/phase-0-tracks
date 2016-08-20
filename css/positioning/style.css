@@ -1,7 +1,7 @@
-#FinalOctopus {
-	position: relative;
-	text-align: center;
-
+.finaloctopus {
+   position: relative; 
+   max-width: 250px;
+   margin: auto;
 }
 
 #octopus {
@@ -9,14 +9,16 @@
 	z-index: -1;
 	top: 125px;
 }
+
 #hat {
 	position: absolute;
 	z-index: 0;
 	top: 30px;
+	left: -15px;
 }
 #glasses {
 	position: absolute;
 	z-index: 1;
-	left: 50px;
-	top:225px;
+	left: 42px;
+	top:223px;
 }
