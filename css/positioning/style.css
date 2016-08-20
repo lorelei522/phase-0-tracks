@@ -1,0 +1,24 @@
+.finaloctopus {
+   position: relative; 
+   max-width: 250px;
+   margin: auto;
+}
+
+#octopus {
+	position: absolute;
+	z-index: -1;
+	top: 125px;
+}
+
+#hat {
+	position: absolute;
+	z-index: 0;
+	top: 30px;
+	left: -15px;
+}
+#glasses {
+	position: absolute;
+	z-index: 1;
+	left: 42px;
+	top:223px;
+}
