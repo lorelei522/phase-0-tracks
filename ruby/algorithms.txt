@@ -1,0 +1,10 @@
+write the algorithm for using an elevator. Remember, robots are not smart at all, so you'll have to spell everything out.
+For instance, how will your robot figure out which floor button to press?
+
+Move forward until inside the elevator.
+Locate elevator controls along the wall.
+Press button to floor desired.
+Until you reach floor desired:
+	Remain in elevator
+If floor desired reached and doors open:
+	Exit the elevator	
