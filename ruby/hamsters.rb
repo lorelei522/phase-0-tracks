@@ -13,3 +13,6 @@ estimated_age= gets.to_i
 	else
 		#{estimated_age}
 end		
+
+puts "This hamster name is #{hamster_name} and it is #{estimated_age} years old. It's fur color is #{fur_color} and has a volume level of #{volume_level}. Customer replied #{good_candidate} to whether it 
+was a good candidate for adoption."
