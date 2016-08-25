@@ -1,10 +1,16 @@
 write the algorithm for using an elevator. Remember, robots are not smart at all, so you'll have to spell everything out.
 For instance, how will your robot figure out which floor button to press?
 
-Move forward until inside the elevator.
-Locate elevator controls along the wall.
-Press button to floor desired.
-Until you reach floor desired:
+Elevator Pseudocode:
+
+-Move forward until inside the elevator.
+-Robot locate elevator key pad along the wall.
+-Robot will ask owner "What floor would you like to go to?"
+-Until valid floor is requested 
+	-Robot will ask "What floor would you like to go to?"
+-If valid floor stated
+	-Press button to floor desired.
+-While current_floor || floor desired.	
 	Remain in elevator
-If floor desired reached and doors open:
+-If floor desired reached && current_floor:
 	Exit the elevator	
