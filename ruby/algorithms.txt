@@ -1,10 +1,38 @@
 write the algorithm for using an elevator. Remember, robots are not smart at all, so you'll have to spell everything out.
 For instance, how will your robot figure out which floor button to press?
 
-Move forward until inside the elevator.
-Locate elevator controls along the wall.
-Press button to floor desired.
-Until you reach floor desired:
-	Remain in elevator
-If floor desired reached and doors open:
-	Exit the elevator	
+Elevator Algorithm:
+
+-Move forward until inside the elevator.
+-Robot locate elevator key pad along the wall.
+-Robot will ask owner "What floor would you like to go to?"
+-Until valid floor is requested 
+	-Robot will ask "What floor would you like to go to?"
+-If valid floor stated
+	-Press button to floor desired.
+-While current_floor || floor desired.	
+	-Remain in elevator
+-If floor is desired floor && current_floor.
+	-Exit the elevator	
+
+
+
+Making a peanut butter and jelly sandwich Algorithm:
+
+Have all necessary materials on your counter:
+	bread, peanut butter, jelly, plate, knife
+
+Place two slices of bread on plate.
+Use knife to put some peanut butter on bread.
+Until peanut butter is evenly on slice bread
+	continue to put peanut butter on bread.
+end
+Use knife to put some jelly on bread.
+Until jelly is evenly on slice bread
+	continue to put jelly on bread.
+end
+Put two slices of bread together(with jelly and peanut butter on the inside)
+Cut the sandwich in half.
+EAT
+
+
