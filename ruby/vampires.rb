@@ -1,7 +1,7 @@
 #Release 2 create a loop that asks how many employees will be processed 
 #and have the program process them until all employees go all through
 
-puts "How many employees are being processed today?"
+puts "How many employees are being processed today?(integer)"
 employee_number= gets.chomp.to_i
 
 while employee_number>0
@@ -17,6 +17,17 @@ while employee_number>0
 	health_insurance= gets.chomp
 
 	age_calculated= 2016-year_of_birth
+
+#list allergies until done. if at any point allergy=sunshine puts "probably a vampire"
+
+puts "Please list your allergies (one at a time). If all allergies are listed please write 'done'. Thank you!"
+	allergy = ""
+	until allergy == "done" || allergy == "sunshine"
+		allergy = gets.chomp
+		if allergy == "sunshine"
+			puts "Probably a vampire."
+		end
+	end	
 
 #If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
 #If the employee got their age wrong, and hates garlic bread or waives insurance, the result is “Probably a vampire.”
