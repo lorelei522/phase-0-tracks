@@ -48,3 +48,7 @@ else
 end
 	employee_number=employee_number-1
 end
+
+#release 5-plot twist Everybody is actually cool
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends." 
