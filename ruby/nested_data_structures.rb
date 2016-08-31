@@ -1,10 +1,10 @@
 movie_collection = {
-	'Horror Genre': [
+	'horror': [
 		'Friday the 13th'
 		'Candyman'
 		'Nightmare on Elm Street'
 	]
-	'Romantic Comedy': [
+	'romantic comedy': [
 		'10 things I Hate About You'= {
 			main_actor: 'Heath Ledger'
 			main_actress: 'Julia Stiles'
@@ -20,3 +20,5 @@ movie_collection = {
 	]	
 	
 }
+
+p movie_collection['romantic comedy'][2][main_actor]
