@@ -37,3 +37,22 @@ interior_design_client[:loves_leopard]=gets.chomp
 puts "Do they love green(true or false)?"
 interior_design_client[:loves_green]=gets.chomp
 
+#Print the hash back out to the screen when the designer has answered all of the questions.
+
+p interior_design_client
+
+# what if they need to update?
+
+puts "Do you need to update any values? Yes or No?"
+update= gets.chomp.capitalize
+	
+if update== "Yes"
+	puts "What is the value label and the new value?"
+	update_answer= gets.chomp
+else
+	puts "Thank you for using the system!"
+end
+
+p interior_design_client
+
+#to update you would write interior_design_client[:name]= 
