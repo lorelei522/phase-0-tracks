@@ -29,3 +29,9 @@ movie_collection = {
 	}
 }
 
+p movie_collection[:horror][1]
+p movie_collection[:horror][2].upcase
+p movie_collection[:romantic][:Eighties][:actors][1]
+p movie_collection[:romantic][:Nineties][:city]
+p movie_collection[:romantic][:Seventies][:movie_name]
+p movie_collection[:romantic][:Sixities][:review]
