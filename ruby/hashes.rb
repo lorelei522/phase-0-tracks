@@ -41,18 +41,19 @@ interior_design_client[:loves_green]=gets.chomp
 
 p interior_design_client
 
-# what if they need to update?
+# what if they need to update? We can use below:
 
 puts "Do you need to update any values? Yes or No?"
 update= gets.chomp.capitalize
 	
 if update== "Yes"
-	puts "What is the value label and the new value?"
-	update_answer= gets.chomp
+	puts "Which one of the following do you need to update: :name, :age, :address, :number_of_children, :decor_theme, :amount_of_rooms, :loves_leopard, :loves_green?"
+	update_label= gets.chomp.to_sym
+	puts "What is the new value for your label?"
+	interior_design_client[update_label]= gets.chomp
+	p interior_design_client
 else
 	puts "Thank you for using the system!"
 end
-
-p interior_design_client
 
 
