@@ -66,7 +66,9 @@ until inputed_name == "quit"
       alias_converter(inputed_name)
     end
 end
+#Release2: with the all the stored names from the session. 
+#Print them out like Agent name is actually original name
 
 all_names_in_session.each do |original, agent_name|
-  puts "#{original} is also known as #{agent_name}"
+  puts "#{agent_name} is actually #{original}. MIND BLOWN!"
 end  
