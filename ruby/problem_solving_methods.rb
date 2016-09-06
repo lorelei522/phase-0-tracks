@@ -18,3 +18,4 @@ end
 
 array=[ 1, 2, 3, 4, 5]
 p search_array(array, 4)
+p search_array(array, 10)
