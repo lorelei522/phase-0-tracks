@@ -51,3 +51,30 @@ end
 fib(100)
 fib(10)
 fib(6)
+
+
+#Release 2
+=begin
+Research Bubble Sort. Basically if you have an array, it will
+go through(loop?) the array until it is sorted.
+=end
+
+def bubble(array)
+  number = array.length
+  loop do
+    fixed = false
+
+    (number-1).times do |i|
+      if array[i] > array[i+1]
+        array[i], array[i+1] = array[i+1], array[i]
+        fix = true
+      end
+    end
+
+    break if not fixed
+  end
+  array
+end
+
+array= [1,4,2,3,5,7,6]
+bubble(array)
