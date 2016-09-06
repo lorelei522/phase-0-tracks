@@ -15,3 +15,6 @@ back together in the end (.join)
 
 vowels = ['a', 'e', 'i', 'o', 'u']
 consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+
+puts "What is your original name? (first and last name)"
+original_name_given=gets.chomp
