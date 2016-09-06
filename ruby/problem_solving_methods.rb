@@ -48,6 +48,7 @@ def fib(number)
   end
 end
 
+#examples
 fib(100)
 fib(10)
 fib(6)
@@ -73,10 +74,9 @@ def bubble(array)
 
     break if not fixed
   end
+
   array
 end
 
 array= [1,4,2,3,5,7,6]
-p bubble(array)
-array= [3, 24, 21, 40, 4, 2]
-p bubble(array)
+bubble(array)
