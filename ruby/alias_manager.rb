@@ -12,17 +12,17 @@ back together in the end (.join)
 
 =end
 
-
 #determine what letter is a vowel and which is a consonant
-vowels = ['a', 'e', 'i', 'o', 'u']
-consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+vowel = ['a', 'e', 'i', 'o', 'u']
+consonant = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
 
 puts "What is your original name? (first and last name)"
-original_name_given=gets.chomp
+original_name_given=gets.chomp.downcase
+
+letter= 0
 
 #reverse the first and last name as wholes
 reverse_name=original_name_given.split(' ').reverse.join(' ')
-
 #split the letters of the reversed names 
 split_letters_of_reversed_name= reverse_name.split('')
 split_letters_of_reversed_name.map! do |letter|
@@ -41,7 +41,9 @@ split_letters_of_reversed_name.map! do |letter|
           new_letter = consonant[index]
         end
     else
-    	letter
+      letter
     end
-    end
-new_name=split_letters_of_reversed_name.join('')   
+end
+
+#make sure the first letter of each word gets capitalized and join back.
+p new_name= split_letters_of_reversed_name.join('').split(' ').map {|i| i.capitalize}.join(' ')
