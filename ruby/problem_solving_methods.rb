@@ -77,4 +77,6 @@ def bubble(array)
 end
 
 array= [1,4,2,3,5,7,6]
-bubble(array)
+p bubble(array)
+array= [3, 24, 21, 40, 4, 2]
+p bubble(array)
