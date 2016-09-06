@@ -31,4 +31,23 @@ the previous two.
 IE. Fib(6) will give you [0,1,1,2,3,5]
 Must work with Fib 100 giving you the last number of
 218922995834555169026
+=end
+
+def fib(number)
+  fib_array = [0, 1]
+  if number == 0
+    p []
+  elsif number == 1
+    p [0]
+  else 
+    until fib_array.length == number
+      next_number = fib_array[-1] + fib_array[-2]
+      fib_array << next_number 
+    end
+  p fib_array
+  end
 end
+
+fib(100)
+fib(10)
+fib(6)
