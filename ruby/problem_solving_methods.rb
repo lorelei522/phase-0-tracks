@@ -16,6 +16,6 @@ def  search_array (array, number)
   index.empty? ? nil : index
 end
 
-array=[ 1, 2, 3, 4, 5]
-p search_array(array, 4)
-p search_array(array, 10)
+array=[ 6, 7, 8, 9, 10]
+p search_array(array, 7)
+p search_array(array, 15)
