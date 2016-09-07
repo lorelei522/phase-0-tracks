@@ -57,7 +57,17 @@ class Exercise
 end	
 
 
-Strength_Training= []
-50.times {Strength_Training << Exercise.new}
-puts "We have #{Strength_Training.length}!"
+#Release-2-1- just using a loop to make 50 instances of our Excercise class
+#5  0.times {Exercise.new}
+
+#Release-2-2- create the instance and store in a data structure (an array)
+strength_training= []
+50.times {strength_training << Exercise.new}
+puts "We have #{strength_training.length} instances!"
+
+#Release-2-3- Iterate through the array to call all the instance methods for all the isntances(50 instances)
+strength_training.each do |workout|
+	workout.pushups(5)
+	workout.pullup(6)
+end	
 
