@@ -10,9 +10,19 @@ class Puppy
 
 	def roll_over
 		puts "*rolls over*"
-	end		
+	end
+
+	def dog_years(human_years)
+		human_years * 7		
+	end	
+
+	def bang
+		puts "*plays dead*"
+	end	
 end		
 
 jasper= Puppy.new
 jasper.speak(4)
 jasper.roll_over
+puts jasper.dog_years(3)
+jasper.bang
