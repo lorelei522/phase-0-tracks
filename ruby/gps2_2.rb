@@ -67,3 +67,21 @@ update(variable, 'ice-cream', 1)
 p variable
 nice_print(variable)
 variable
+
+
+=begin
+	_____Release 4- Reflect_____
+I learned that proper pseudcode can make things look more clear and readable. So
+that when you start coding it comes to you faster.
+
+For something like a grocery list a hash makes total sense, we have food items and we have 
+their values. It keeps the info consistent.
+
+The method returns what the defined method arugument is telling it to do.
+
+You can pass information through methods by creating variables.
+
+I can define methods and create hashes/arrays in methods and work on them outside of the method.
+
+end
+
