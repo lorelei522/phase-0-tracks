@@ -4,6 +4,8 @@
 class Santa
 	#Release 3: make the getter methods that you wrote before in a shorter way
 	attr_reader :age, :ethincity
+	#release 3: make setter method the shorter way (readable/writable)
+	attr_accessor :gender
 
 #release 1: Add attributes such as gender, ethincity (which will be passed in on initialization)	
 	def initialize(gender, ethincity)
@@ -50,10 +52,10 @@ class Santa
 	#end	
 	
 	# sample of a setter method. Makes it writable. Change an attribute from outside 
-	#the class
-	def gender=(new_gender)
-		@gender = new_gender
-	end	
+	#the class (this is the long way)
+	#def gender=(new_gender)
+	#	@gender = new_gender
+	#end	
 end
 
 
