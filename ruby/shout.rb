@@ -20,12 +20,12 @@
 #it would be like Shout is the module and the classes are Happy or Angry
 
 module Shout
-
-	def self.yell_angrily(words)
+	#remember doesn't need the self anymore since its now part of a mixin
+	def yell_angrily(words)
  		words + "!!!" + " :("
 	end
 
-	def self.yell_happily(words)
+	def yell_happily(words)
   		words + "!!!" + " WOOHOO" + " :D"
 	end
 end
@@ -34,7 +34,18 @@ end
 class Parents
 	include Shout
 end	
-
+#general as in the army, marine corps, or air force
 class General
 	include Shout
 end	
+
+#add driver code to show the same class with the two methods.
+
+mom= Parents.new
+p mom.yell_angrily("Clean your room already")
+p mom.yell_happily("I am so proud of you. You are going to college")
+
+army= General.new
+p army.yell_angrily("You scum! Drop and give me 50")
+p army.yell_happily("Proud of you soldier")
+#please note a general would never say woohoo :)
