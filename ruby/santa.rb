@@ -29,24 +29,43 @@ class Santa
 	end
 end
 
-
+#-------------------------
 #NY_Santa = Santa.new("Female", "Hispanic")
 #NY_Santa.speak
 #NY_Santa.eat_milk_and_cookies('sugar cookie')
 #NY_Santa.about
 
+#-------------------------
 # Release 1: they game this sample of instances in an array to run through:
-santas = []
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
+#santas = []
+#santas << Santa.new("agender", "black")
+#santas << Santa.new("female", "Latino")
+#santas << Santa.new("bigender", "white")
+#santas << Santa.new("male", "Japanese")
+#santas << Santa.new("female", "prefer not to say")
+#santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+#santas << Santa.new("N/A", "N/A")
 
 #Release 1, you can run the above array of santas in the below to see if the method works on
 #each of them
+#santas.each do |santas|
+#	santas.about
+#end
+
+#-------------------------
+#Release 1 :Notice how the code above is a bit repetitive as we keep adding Santa instances 
+#into the array? That's your cue to possibly refactor. Note that the below code
+#would also work (as would several other solutions):
+
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+example_genders.length.times do |i|
+  santas << Santa.new(example_genders[i], example_ethnicities[i])
+end
+
+#this will help it go through all the refactoring from above.
 santas.each do |santas|
 	santas.about
 end
+#-------------------------
