@@ -7,7 +7,10 @@ class Santa
 	def initialize(gender, ethincity)
 		puts "Initializing Santa instance"
 		@gender = gender
-		@ethincity= ethincity
+		@ethincity = ethincity
+		@reindeer_ranking = 'Rudolph', 'Dasher', 'Dancer', 'Prancer', 'Vixen', 
+		'Comet', 'Cupid', 'Donner', 'Blitzen'
+		@age = 0
 	end
 	
 	def speak
@@ -22,6 +25,7 @@ class Santa
 	def about
 		puts "Santa is a #{@gender}"
 		puts "They are #{@ethincity}"
+		puts "Here is a list of Santa's most preferred reindeers in order #{@reindeer_ranking}!"
 	end
 end
 
