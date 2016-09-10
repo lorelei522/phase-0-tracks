@@ -2,6 +2,8 @@
 
 
 class Santa
+	#Release 3: make the getter methods that you wrote before in a shorter way
+	attr_reader :age, :ethincity
 
 #release 1: Add attributes such as gender, ethincity (which will be passed in on initialization)	
 	def initialize(gender, ethincity)
@@ -38,14 +40,15 @@ class Santa
 		@reindeer_ranking << reindeer_name
 	end
 
-	# sample of a getter method just returning age
-	def age
-		@age
-	end	
-	# sample of a getter method just ethincity
-	def ethincity
-		@ethincity
-	end	
+	# sample of a getter method just returning age(this is the long way)
+	#def age
+	#	@age
+	#end	
+	# sample of a getter method just ethincity(this is the long way)
+	#def ethincity
+	#	@ethincity
+	#end	
+	
 	# sample of a setter method. Makes it writable. Change an attribute from outside 
 	#the class
 	def gender=(new_gender)
@@ -58,8 +61,9 @@ NY_Santa = Santa.new("Female", "Hispanic")
 NY_Santa.speak
 NY_Santa.eat_milk_and_cookies('sugar cookie')
 #NY_Santa.about
-#sample of a getter method
+#sample of a getter method being called
 p NY_Santa.age
+p NY_Santa.ethincity
 #sample of setter method for Gender, Release 2
 NY_Santa.gender = "Male"
 NY_Santa.celebrate_birthday
