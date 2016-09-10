@@ -3,12 +3,13 @@
 
 class Santa
 	#Release 3: make the getter methods that you wrote before in a shorter way
-	attr_reader :age, :ethincity
+	attr_reader :reindeer_ranking
 	#release 3: make setter method the shorter way (readable/writable)
-	attr_accessor :gender
+	attr_accessor :gender, :ethincity, :age
 
-#release 1: Add attributes such as gender, ethincity (which will be passed in on initialization)	
-	def initialize(gender, ethincity)
+#release 1: Add attributes such as gender, ethincity (which will be passed in on initialization)
+#release 4: for our final project to work you must take out the gender, ethincity arguement	
+	def initialize#(gender, ethincity)
 		puts "Initializing Santa instance"
 		@gender = gender
 		@ethincity = ethincity
@@ -58,7 +59,7 @@ class Santa
 	#end	
 end
 
-
+=begin
 NY_Santa = Santa.new("Female", "Hispanic")
 NY_Santa.speak
 NY_Santa.eat_milk_and_cookies('sugar cookie')
@@ -73,7 +74,7 @@ NY_Santa.celebrate_birthday
 NY_Santa.get_mad_at("Donner")
 NY_Santa.about
 p NY_Santa
-
+=end
 
 #------------------
 # Release 1: they game this sample of instances in an array to run through:
@@ -109,3 +110,18 @@ p NY_Santa
 #santas.each do |santas|
 #	santas.about
 #end
+#-------------------------
+
+#Release 4: let make a program that does 50 santas. play around with how many santas
+#randomly select items in an array. Look at Docs. .Sample lets you get randoms
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Unicorn", "prefer not to say", "Mystical"]
+
+santas = []
+10.times do
+	santa= Santa.new
+	santa.gender= example_genders.sample             #make this get randoms
+	santa.ethincity= example_ethnicities.sample      #make this get randoms
+	santa.age= rand(140)							#make santas age be randome from 0-140
+	santas << santa
+end	
