@@ -27,15 +27,38 @@ class Santa
 		puts "They are #{@ethincity}"
 		puts "Here is a list of Santa's most preferred reindeers in order #{@reindeer_ranking}!"
 	end
+	#Release 2, Age Santa by 1 year Setter methods make it readable
+	def celebrate_birthday
+		@age += 1
+		p @age
+	end	
+	# sample of a getter method just returning age
+	def age
+		@age
+	end	
+	# sample of a getter method just ethincity
+	def ethincity
+		@ethincity
+	end	
+	# sample of a setter method. Makes it writable. Change an attribute from outside 
+	#the class
+	def gender=(new_gender)
+		@gender = new_gender
+	end	
 end
 
-#-------------------------
-#NY_Santa = Santa.new("Female", "Hispanic")
-#NY_Santa.speak
-#NY_Santa.eat_milk_and_cookies('sugar cookie')
-#NY_Santa.about
 
-#-------------------------
+NY_Santa = Santa.new("Female", "Hispanic")
+NY_Santa.speak
+NY_Santa.eat_milk_and_cookies('sugar cookie')
+NY_Santa.about
+#sample of a getter method
+p NY_Santa.age
+#sample of setter method for Gender, Release 2
+NY_Santa.gender = "Male"
+NY_Santa.celebrate_birthday
+
+
 # Release 1: they game this sample of instances in an array to run through:
 #santas = []
 #santas << Santa.new("agender", "black")
@@ -57,15 +80,15 @@ end
 #into the array? That's your cue to possibly refactor. Note that the below code
 #would also work (as would several other solutions):
 
-santas = []
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i])
-end
+#santas = []
+#example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+#example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+#example_genders.length.times do |i|
+#  santas << Santa.new(example_genders[i], example_ethnicities[i])
+#end
+
 
 #this will help it go through all the refactoring from above.
-santas.each do |santas|
-	santas.about
-end
-#-------------------------
+#santas.each do |santas|
+#	santas.about
+#end
