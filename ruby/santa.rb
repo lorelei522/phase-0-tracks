@@ -118,10 +118,19 @@ example_genders = ["agender", "female", "bigender", "male", "female", "gender fl
 example_ethnicities = ["black", "Latino", "white", "Unicorn", "prefer not to say", "Mystical"]
 
 santas = []
-10.times do
+30.times do
 	santa= Santa.new
 	santa.gender= example_genders.sample             #make this get randoms
 	santa.ethincity= example_ethnicities.sample      #make this get randoms
 	santa.age= rand(140)							#make santas age be randome from 0-140
 	santas << santa
 end	
+
+#Release 4 contin: print out the attributes of each Santa using 
+#the instance methods that give you access to that data.
+
+santas.each_with_index do |santa, i|
+	puts "Santa #{i + 1} is #{santa.age} years old, has an ethincity of #{santa.ethincity} and is
+		#{santa.gender} when it comes to gender. 
+		This is their reindeer ranking #{santa.reindeer_ranking}."
+end		
