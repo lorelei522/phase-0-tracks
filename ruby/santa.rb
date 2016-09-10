@@ -9,7 +9,14 @@ class Santa
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!"		
 	end
+
+	def eat_milk_and_cookies(cookie_type)
+		puts "That was a good #{cookie_type}!"
+		cookie_type
+	end	
 end
 
-Santa1 = Santa.new
-Santa1.speak
+
+NY_Santa = Santa.new
+NY_Santa.speak
+NY_Santa.eat_milk_and_cookies('sugar cookie')
