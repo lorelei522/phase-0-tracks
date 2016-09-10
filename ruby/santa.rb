@@ -8,8 +8,8 @@ class Santa
 		puts "Initializing Santa instance"
 		@gender = gender
 		@ethincity = ethincity
-		@reindeer_ranking = 'Rudolph', 'Dasher', 'Dancer', 'Prancer', 'Vixen', 
-		'Comet', 'Cupid', 'Donner', 'Blitzen'
+		@reindeer_ranking = ['Rudolph', 'Dasher', 'Dancer', 'Prancer', 'Vixen', 
+		'Comet', 'Cupid', 'Donner', 'Blitzen']
 		@age = 0
 	end
 	
@@ -32,6 +32,12 @@ class Santa
 		@age += 1
 		p @age
 	end	
+	#release 2 take a reindeers name as argument and move reindeer to last place
+	def get_mad_at(reindeer_name)
+		@reindeer_ranking.delete(reindeer_name)
+		@reindeer_ranking << reindeer_name
+	end
+
 	# sample of a getter method just returning age
 	def age
 		@age
@@ -51,14 +57,19 @@ end
 NY_Santa = Santa.new("Female", "Hispanic")
 NY_Santa.speak
 NY_Santa.eat_milk_and_cookies('sugar cookie')
-NY_Santa.about
+#NY_Santa.about
 #sample of a getter method
 p NY_Santa.age
 #sample of setter method for Gender, Release 2
 NY_Santa.gender = "Male"
 NY_Santa.celebrate_birthday
+#when calling .about or p NY_Santa- Donner will now be in the back of the pack
+NY_Santa.get_mad_at("Donner")
+NY_Santa.about
+p NY_Santa
 
 
+#------------------
 # Release 1: they game this sample of instances in an array to run through:
 #santas = []
 #santas << Santa.new("agender", "black")
