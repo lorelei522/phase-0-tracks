@@ -69,6 +69,10 @@ class Game
 		@letters_guessed << letter
 		@guess_count -= 1
 		puts "#{guess_count} guess(es) left!!"
+
+		#let them know if they already guessed the letter they just entered
+
+		return puts "#{letter} has already been guessed" if @letter_guessed.include?(letter)
 	end	
 
 end
