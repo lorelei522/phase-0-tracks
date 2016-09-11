@@ -75,6 +75,15 @@ class Game
 		return puts "#{letter} has already been guessed" if @letter_guessed.include?(letter)
 	end	
 
+	#add method that will show what it will look like if the guess the word correctly in time.
+	def won_game
+		if @progress == @secret_word
+			puts "WOOHOO YOU WON! THAT IS THE WORD!"
+				won_game = true
+		else 
+			puts "GAME OVER YOU LOSE"	
+		end
+	end			
 end
 
 
