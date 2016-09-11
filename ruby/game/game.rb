@@ -36,14 +36,22 @@ attr_accessor (makes it readable and writeable)
 class Game
 
 	attr_reader :progress
-	attr_accessor :secret_word :letter_guessed :guess_count :game_over
+	attr_accessor :secret_word, :letter_guessed, :guess_count, :game_over
 
 	def intialize(secret_word)
-		@secret_word
-		@letter_guessed
+		@secret_word = secret_word
+		@progress= "-" * secret_word.length
 		@game_over = false
 		@game_won = false
 		@letter_guessed = []
 		@guess_count = 0
 	end	
 end
+
+
+#Driver code to test out intialize
+
+puts "What is your secret word player 1?"
+secret_word= gets.chomp.downcase
+
+p secret_word
