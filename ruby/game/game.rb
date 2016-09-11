@@ -17,7 +17,7 @@ Repeated guesses do not count against the user.
 input -user will guess a letter
 
 IF letter is in the word
-	puts "NICE JOB"
+	puts "NICE JOB!"
 	replace the empty space with the letter
 ELSE if letter not in the word
 	puts "Sorry try again"
@@ -36,16 +36,41 @@ attr_accessor (makes it readable and writeable)
 class Game
 
 	attr_reader :progress
-	attr_accessor :secret_word, :letter_guessed, :guess_count, :game_over
+	attr_accessor :secret_word, :letters_guessed, :guess_count, :lost_game, :won_game
 
 	def intialize(secret_word)
 		@secret_word = secret_word
 		@progress= "-" * secret_word.length
-		@game_over = false
-		@game_won = false
-		@letter_guessed = []
+		@won_game = false
+		@lost_game= false
+		@letters_guessed = []
 		@guess_count = 0
 	end	
+
+	#letter checking method. If they guess correctly tell them so. if they guess incorrectly tell
+	#them to do it over again.
+	def letter_checker(letter)
+		if secret_word.include?(letter)
+			puts "NICE JOB!! woohoo"
+
+			letter_index= 0
+			secret_word.each_letter do |L|
+				if L == letter
+				progress[letter_index] = L
+				end
+				letter_index += 1	
+			end
+			puts @progress
+		else 
+			puts "Nice try! Guess again please"
+			puts @progress
+		end	
+		#Let them know how many guesses they have left
+		@letters_guessed << letter
+		@guess_count -= 1
+		puts "#{guess_count} guess(es) left!!"
+	end	
+
 end
 
 
@@ -54,4 +79,4 @@ end
 puts "What is your secret word player 1?"
 secret_word= gets.chomp.downcase
 
-p secret_word
+game = Game.new(secret_word)
