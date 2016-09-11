@@ -35,8 +35,15 @@ attr_accessor (makes it readable and writeable)
 
 class Game
 
-	attr_accessor :secret_word :letter_guessed
+	attr_reader :progress
+	attr_accessor :secret_word :letter_guessed :guess_count :game_over
 
-	def intialize
-
+	def intialize(secret_word)
+		@secret_word
+		@letter_guessed
+		@game_over = false
+		@game_won = false
+		@letter_guessed = []
+		@guess_count = 0
+	end	
 end
