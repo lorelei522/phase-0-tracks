@@ -116,7 +116,7 @@ secret_word = gets.chomp
 game = Game.new(secret_word)
 game.secret_word
 
-#woohoo found a way to not let the Player 2 see the word that was written by Player 1
+#Found a way to not let the Player 2 see the word that was written by Player 1
 system "clear"
 #initial message for Player 2 for the beginning of the game
 puts "Player 2 you have #{game.guess_count} guesses to guess the secret word. Good Luck!"
