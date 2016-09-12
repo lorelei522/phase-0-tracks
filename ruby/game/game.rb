@@ -102,7 +102,7 @@ class Game
 	#add method that will show what it will look like if the guess the word correctly in time and not in time.
 	def game_won
 		if @progress == @secret_word
-				puts "WOOHOO YOU WON! THAT IS THE WORD!"
+				puts "WOOHOO YOU WON! #{secret_word.upcase} IS THE WORD!"
 				game_won = true
 		else 
 			puts "GAME OVER YOU LOSE"	
