@@ -109,7 +109,8 @@ class Game
 		end
 	end	
 end
-#Driver code to test out initialize
+#Driver code. Make sure player 1 can input the secret word and player 2 won't see it when it
+#is their turn
 puts "Player 1 enter your secret word. Player 2 please look away"
 secret_word = gets.chomp
 # set secret word Game.new
