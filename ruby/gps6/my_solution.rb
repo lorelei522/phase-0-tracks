@@ -4,25 +4,30 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+#Links the file to this Class. Relative to the current directory.
+#Difference with Require is that is it will start looking in a certain path. 
 require_relative 'state_data'
 
 class VirusPredictor
 
+  #Initialize method for the class. Calling for different arguements.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  #Method stating the data
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
+  #Any methods below Private are able to be called by the user.
   private
 
+  #method to figure out how many deaths in the state will happen with population density and
+  #population.
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,6 +46,7 @@ class VirusPredictor
 
   end
 
+  #method to figure out the speed according to population density
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -72,6 +78,7 @@ end
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
+alabama.predicted_deaths
 
 jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
 jersey.virus_effects
