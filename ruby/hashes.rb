@@ -47,10 +47,10 @@ puts "Do you need to update any values? Yes or No?"
 update= gets.chomp.capitalize
 	
 if update== "Yes"
-	puts "Which one of the following do you need to update: :name, :age, :address, :number_of_children, :decor_theme, :amount_of_rooms, :loves_leopard, :loves_green?"
-	update_label= gets.chomp.to_sym
+	puts "Which one of the following do you need to update: name, age, address, number_of_children, decor_theme, amount_of_rooms, loves_leopard, loves_green?"
+	update_label= gets.chomp
 	puts "What is the new value for your label?"
-	interior_design_client[update_label]= gets.chomp
+	interior_design_client[update_label.to_sym]= gets.chomp
 	p interior_design_client
 else
 	puts "Thank you for using the system!"
