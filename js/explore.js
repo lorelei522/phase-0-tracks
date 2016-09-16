@@ -21,7 +21,6 @@ return joinArray;
 //to be able to see your function run in terminal when you run it. driver code must be in console.log
 console.log(reverse("hello"));
 
-
 //the above can also look like this in just one line of code
 
 // function reverse(str) {
@@ -29,7 +28,16 @@ console.log(reverse("hello"));
 // }
 // reverse("hello");
 
+//questions 4 store the string in a variable. It isn't being printed though.
 
+var string_new= reverse("hello");
+
+//question 5, test true with a conditional statement on the new variable
+if (1 == 1) {
+	console.log(string_new);
+}
+
+//----------------------------------------------------------------------
 //Second try: Reversing a string with a loop and iteration
 
 function reverse2(str) {
@@ -43,4 +51,13 @@ function reverse2(str) {
 	return updatedString;
 }
 
-console.log(reverse2("hello"));
+console.log(reverse2("howdy"));
+
+//questions 4 store the string in a variable. It isn't being printed though
+var new_string= reverse2("howdy");
+
+// question 5, add driver code that prints the variable 
+//if some condition is true. The condition can be a silly one, like 1 == 1.
+if (1 == 1) {
+	console.log(new_string);
+}
