@@ -26,3 +26,22 @@ horses[horseNames[i]] = colors[i];
 }
 //print the new objects of horses
 console.log(horses)
+
+
+//--------------------
+//Release 2
+//write a constructor function for a car. Give it a few different properties of various
+// data types, including at least one function. Demonstrate that your function works 
+//by creating a few cars with it.
+
+function Car(model, year, isAutomatic) {
+	console.log("Our new car:", this);
+
+	this.model = model;
+	this.year = year;
+	this.isAutomatic= isAutomatic;
+
+	this.turnOn = function() {console.log('zoom zoom!'); };
+
+	console.log("Car Initialization Complete");
+}
