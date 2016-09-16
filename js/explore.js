@@ -18,7 +18,7 @@ var joinArray= StringinReverseArray.join("");
 // return the reversed string and end the method
 return joinArray;
 }
-
+//to be able to see your function run in terminal when you run it. driver code must be in console.log
 console.log(reverse("hello"));
 
 
