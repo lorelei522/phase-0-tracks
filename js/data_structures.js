@@ -5,3 +5,9 @@ var horseNames= ['American Pharoah', 'War Admiral', 'California Chrome', 'Secret
 
 
 // push a new horse name and a new horse name and new color into the different arrays
+
+colors.push('fiery red')
+console.log(colors)
+
+horseNames.push('Man o War')
+console.log(horseNames)
