@@ -46,3 +46,8 @@ function Car(model, year, isAutomatic) {
 
 	console.log("Car Initialization Complete");
 }
+
+console.log("Let's go to the dealership and get a new car..")
+
+var newCar= new Car ("Maserati", 2016, true);
+console.log(newCar)
