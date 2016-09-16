@@ -1,3 +1,5 @@
+// DID THIS EXAMPLE ALONE
+
 // create one array of four colors and one array of 4 names for your horses
 
 var colors= ['hot pink', 'sky blue', 'bright orange', 'black darkness']
