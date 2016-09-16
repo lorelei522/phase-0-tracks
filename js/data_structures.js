@@ -51,3 +51,6 @@ console.log("Let's go to the dealership and get a new car..")
 
 var newCar= new Car ("Maserati", 2016, true);
 console.log(newCar)
+console.log("The car goes like this when it turns on..")
+//call the function we described inside of the Car constructor function
+newCar.turnOn();
