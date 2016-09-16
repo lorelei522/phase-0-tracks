@@ -41,6 +41,7 @@ function Car(model, year, isAutomatic) {
 	this.year = year;
 	this.isAutomatic= isAutomatic;
 
+	//a function for the Car object to turnOn and print zoom zoom when it is called
 	this.turnOn = function() {console.log('zoom zoom!'); };
 
 	console.log("Car Initialization Complete");
