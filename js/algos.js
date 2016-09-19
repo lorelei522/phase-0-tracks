@@ -65,13 +65,33 @@ console.log(longestPhrase(array3));  //To Kill A Mockingbird
 //Outputs will be true or false
 
 
+function compareObjects(object1, object2) {
+	for (var key in object1) {
+		if (object2[key] == object1[key]) {
+			console.log("The two objects have a match in key-value?");
+			return true;	
+		}
+	}
+	console.log("The two objects have a match in key-value?");
+	return false;
+}
 
+//declare some objects
 
+var dog= {name: 'Spot', age: 3, isGoodPet: true}
+var kitten= {name: 'Socks', age: 2, isGoodPet: true}
+var bunny= {name: "Honey Loaf", age: 4, isGoodPet: false}
+var hamster= {name: 'Spot', age: 5, isGoodPet: false}
 
+//Run some examples of my key-value function
 
+console.log("Dog and kitten are the objects..")
+console.log(compareObjects(dog, kitten))       //true, match on isGoodPet
 
+console.log("Bunny and kitten are the objects..")
+console.log(compareObjects(bunny, kitten))      //false
 
-
-
+console.log("Dog and hamster are the objects..")
+console.log(compareObjects(dog, hamster))       //true, match on name
 
 
