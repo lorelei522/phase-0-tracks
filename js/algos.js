@@ -61,8 +61,8 @@ console.log(longestPhrase(array3));  //To Kill A Mockingbird
 //Function will take two different objects as an argument--  compareObjects(object1, object2)
 //for loop to iterate through object1 to check their keys and value.
 //Check then object 2. If anything matches the key and values of object1 return true.
-// else return false
-//Outputs will be true or false
+// else return false.
+//Outputs will be true or false. Print statement for true and statement for false.
 
 
 function compareObjects(object1, object2) {
@@ -95,3 +95,6 @@ console.log("Dog and hamster are the objects..")
 console.log(compareObjects(dog, hamster))       //true, match on name
 
 
+//------------------------------------------------------------------------------------
+
+//Release 3- Random Test
