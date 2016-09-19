@@ -101,12 +101,30 @@ console.log(compareObjects(dog, hamster))       //true, match on name
 //function will take an integer for length        randomTestData(integer)
 //function will build an array of the given length. This is the output.
 // IE. function with an argument of 3, we would get an array of 3 random words 
-//make a variable for an array holding the whole alaphabet
+//make a variable for holding the whole alaphabet
 //Math.floor() rounds a number down to the nearest integer
 //Math.random() returns a random number
 
-function randomTestData(integer_for_length) {
-	var alaphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+//function randomTestData(integer_for_length) {
+//try with the alphabet being an array
+//var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+//} 
 
+function generateRandomTest(integer_for_length) {
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	var created_words= [];
+	var word= '';
+
+
+	for (var i = 0; i < integer_for_length; i++) {
+		for (var index = 0; index < (Math.floor(Math.random() * 10) + 1); index++) {
+      			word += alphabet[Math.floor(Math.random() * 26)];
+		}	
+		created_words[i]= word;
+	}
+	return created_words
 } 
-  
+
+console.log(longestPhrase(generateRandomTest(10)))
+
+ // Test out more driver code.  
