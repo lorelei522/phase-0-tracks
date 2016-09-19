@@ -97,4 +97,16 @@ console.log(compareObjects(dog, hamster))       //true, match on name
 
 //------------------------------------------------------------------------------------
 
-//Release 3- Random Test
+//Release 3- Generate Random Test Data
+//function will take an integer for length        randomTestData(integer)
+//function will build an array of the given length. This is the output.
+// IE. function with an argument of 3, we would get an array of 3 random words 
+//make a variable for an array holding the whole alaphabet
+//Math.floor() rounds a number down to the nearest integer
+//Math.random() returns a random number
+
+function randomTestData(integer_for_length) {
+	var alaphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+} 
+  
