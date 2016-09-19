@@ -7,11 +7,11 @@
 // add another function and use a forEach loop. Give the loop a conditional IF test
 
 
-function longestPhrase(phrases) {
+function longestPhrase(strings) {
 
   var longestFirst = 0;
 
-  phrases.forEach(function(phrase) {
+  strings.forEach(function(phrase) {
     if (phrase.length > longestFirst) {
       longestFirst = phrase.length;
       theLongestPhrase = phrase;
@@ -51,5 +51,27 @@ console.log(longestPhrase(array3));  //To Kill A Mockingbird
 //console.log(array3[0].length);   21
 //console.log(array3[1].length);   4
 //console.log(array3[2].length);   11
+
+//------------------------------------------------------------------------------------
+
+//Release 1- Find a Key-Value Match
+//write a function that takes two objects and checks to see if the objects share at 
+//least one key-value pair.
+
+//Function will take two different objects as an argument--  compareObjects(object1, object2)
+//for loop to iterate through object1 to check their keys and value.
+//Check then object 2. If anything matches the key and values of object1 return true.
+// else return false
+//Outputs will be true or false
+
+
+
+
+
+
+
+
+
+
 
 
