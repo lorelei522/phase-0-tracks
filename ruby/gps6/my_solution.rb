@@ -97,3 +97,24 @@ alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
+=begin
+
+What are the differences between the two different hash syntaxes shown in the state_data file?
+*The first one uses a hash rocket to set the value of the key string. 
+*The nested hash uses colon to set the value.
+
+What does require_relative do? How is it different from require?
+*Links the file to this Class. Relative to the current directory.
+*Difference with Require is that is it will start looking in a certain path. 
+
+What are some ways to iterate through a hash?
+* Using a loop. each do 
+
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+*Insance variable stood out.
+
+What concept did you most solidify in this challenge?
+*The importance of reviewing your code and seeing if you can refactor to make it easier and precise to
+read and understand.
+  
+end
