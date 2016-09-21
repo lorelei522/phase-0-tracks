@@ -10,3 +10,12 @@ SELECT * FROM video_games, publishers WHERE video_games.publisher= publishers.id
 5|Red Dead Redemption|2010|Action-Adventure|1|true|1|Rockstar Games
 
 2) Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE video_games SET genre="Survival Horror" WHERE name="Left 4 Dead";
+sqlite> SELECT * FROM video_games;
+1|Left 4 Dead|2008|Survival Horror|2|true
+2|Left 4 Dead 2|2009|First-person shooter|2|true
+3|Grand Theft Auto: Vice City|2002|Action-Adventure|1|false
+4|Grand Theft Auto: San Andreas|2004|Action-Adventure|1|true
+5|Red Dead Redemption|2010|Action-Adventure|1|true
+
