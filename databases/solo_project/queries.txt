@@ -19,3 +19,15 @@ sqlite> SELECT * FROM video_games;
 4|Grand Theft Auto: San Andreas|2004|Action-Adventure|1|true
 5|Red Dead Redemption|2010|Action-Adventure|1|true
 
+3) Display the information in both tables using one query.
+
+
+
+4)Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT video_games.name, publishers.name FROM video_games JOIN publishers ON video_games.publisher= publishers.id;
+Left 4 Dead|Valve Corporation
+Left 4 Dead 2|Valve Corporation
+Grand Theft Auto: Vice City|Rockstar Games
+Grand Theft Auto: San Andreas|Rockstar Games
+Red Dead Redemption|Rockstar Games
