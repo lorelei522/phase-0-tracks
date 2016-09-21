@@ -1,0 +1,12 @@
+Release 2: Execute SQL Queries
+
+1) Display all information in one table
+
+SELECT * FROM video_games, publishers WHERE video_games.publisher= publishers.id;
+1|Left 4 Dead|2008|Firt-person shooter|2|true|2|Valve Corporation
+2|Left 4 Dead 2|2009|First-person shooter|2|true|2|Valve Corporation
+3|Grand Theft Auto: Vice City|2002|Action-Adventure|1|false|1|Rockstar Games
+4|Grand Theft Auto: San Andreas|2004|Action-Adventure|1|true|1|Rockstar Games
+5|Red Dead Redemption|2010|Action-Adventure|1|true|1|Rockstar Games
+
+2) Update an item that meets some condition (you can choose a condition that makes sense).
