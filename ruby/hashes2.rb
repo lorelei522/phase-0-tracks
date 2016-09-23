@@ -12,6 +12,7 @@ Client_Info = {
 	likes_stripes: ""
 }
 
+puts "Welcome to your Client Information Database"
 
 puts "What is the client name?"
 Client_Info[:client_name]= gets.chomp
@@ -45,6 +46,7 @@ p Client_Info
 puts "Do you need to update any of answers? yes or no?"
 update_needed= gets.chomp.downcase
 
+#IF/ELSE for update
 if update_needed== "yes"
 	puts "What info do you need to update? client_name, client_age, num_of_children, decor_theme,
 			num_of_rooms, likes_leopard, likes_stripes?"
@@ -55,7 +57,7 @@ if update_needed== "yes"
 	
 	puts "Thank you for the update! Here is the new values for the client"
 	p Client_Info
-	
+
 else
 	puts "Great you are all set here is your client info again"
 	p Client_Info
