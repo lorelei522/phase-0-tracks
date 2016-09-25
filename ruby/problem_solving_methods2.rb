@@ -26,7 +26,7 @@ p search_array(array, 45)	#will return nil
 #Release 1: Calculate Fibonacci Numbers
 # start with 0 and 1. keep adding numbers from the previous 2 and push in an array
 #calling the method id. fibonacci(6)---- [0,1,1,2,3,5]
-#use the index of the last two numbers to make the next number
+#use the index of the last two numbers [-2] and [-1] to make the next number
 
 def fibonacci(number)
 	#the initial array needs 0 and 1 per instruction
