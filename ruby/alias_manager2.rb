@@ -7,15 +7,44 @@ def name_converter(original)
 vowels= ["a", "e", "i", "o", "u"]
 consonants= ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
 
-# 1- downcase the whole original 
+# 1- downcase the whole original to help with edge cases
 # 2- split into individual words--- "lorelei" "lopez"
 # 3- reverse the individual words--- "lopez" "lorelei"
 # 4- join the words back together--- "lopez lorelei"
 # 5- split each word into letters--- 
-letters= original.downcase.split(' ').reverse.join(' ').split('')
+# 6- put all these changes into a new variable
+change_name= original.downcase.split(' ').reverse.join(' ').split('')
+
+#iterate through the letters of change_name to change permanently the letters
+change_name.map! {
+	|letter|
+	#see if the letter is a vowel
+	if vowels.include?(letter)
+	#make sure the last vowel goes back to the first vowel 
+		if letter== "u"
+			new_letter= "a"
+	#for any other vowel
+		else 
+			index= vowels.index(letter) + 1
+			new_letter= vowels[index]	
+		end
+	#consonants
+	elsif consonants.include?(letter)
+		#use the index of the last of the consonant array -1 to make sure it goes ot [0]
+		if letter== consonants[-1]
+			new_letter= consonants[0]
+		#any other consonants
+		else
+			index= consonants.index(letter) +1
+			new_letter= consonants[index]
+		end
+	else
+		#for the space it can just put the space again
+		letter
+	end		
+}
 
 
-#Split the letters of each word ('')
 end
 
 p name_converter("Lorelei Lopez")
