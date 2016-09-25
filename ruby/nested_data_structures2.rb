@@ -35,3 +35,13 @@ p Bloomingdales[:second_floor][:belt_section][:belt_brands].push("Louis Vuitton"
 p Bloomingdales
 #print that new data. Since it was the last one added can use -1 as the index to call
 p Bloomingdales[:second_floor][:belt_section][:belt_brands][-1]
+
+
+#update data in a hash
+# update the number of employees from the suit section from 5 to 3 employees. Print to see changes
+p Bloomingdales[:second_floor][:suit_section][:employees]= "3"
+p Bloomingdales[:second_floor][:suit_section]
+
+
+
+
