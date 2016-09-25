@@ -138,3 +138,29 @@ hash2.keep_if {
 }
 
 p hash2
+
+#3
+
+hash3 = {
+	one: 1 ,
+	two: 2 ,
+	three: 3 ,
+	four: 4 ,
+	five: 5 ,
+	six: 6 ,
+	seven: 7 ,
+	eight: 8 ,
+	nine: 9 ,
+	ten: 10
+}
+
+puts "Here is Hash 3"
+
+p hash3
+#will select the hash integers that are odd.
+new_hash3=hash3.select {
+	|word, integer|
+	integer.odd?
+}
+
+p new_hash3
