@@ -50,6 +50,7 @@ end
 
 number_array= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 #will delete the digits that are even in the array
+p number_array
 number_array.delete_if {
 	|digit|
 	digit.even?
@@ -59,20 +60,31 @@ p number_array
 
 # question 2. Keep items that meet a certain condition
 number_array2= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+p number_array2
 number_array2.keep_if {
 	|digit|
 	digit > 4
 }	 
-
 p number_array2
 
 # question 3. A different method that filters a data structure for only
 # items satisfying a certain condition 
 
 number_array3= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+p number_array3
 odd_numbers= number_array3.select! {
 	|digit|
 	digit.odd?
 }
 p odd_numbers
 
+#4 drops but not including the number
+number_array4= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+p number_array4
+
+new_number_array4= number_array4.drop_while {
+	|digit|
+	digit < 5
+}
+
+p new_number_array4
