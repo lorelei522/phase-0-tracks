@@ -57,4 +57,6 @@ fibonacci(5)
 fibonacci(6)
 fibonacci(100) #should be 218922995834555169026
 
-# Release 2: Research Simple Sort 
+# Release 2: Sort an array
+# Look up insertion sort
+
