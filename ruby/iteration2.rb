@@ -48,20 +48,31 @@ end
 
 #Release 2: Use Documentation
 
-different_greetings= ["bojour", "hola", "ciao", "namaste", "salaam", "hallo"]
-#will delete the greeting who's character length is less than or equal to 5
-different_greetings.delete_if {
-	|greeting|
-	greeting.length < 5
+number_array= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#will delete the digits that are even in the array
+number_array.delete_if {
+	|digit|
+	digit.even?
 }
-p different_greetings
+p number_array
 
 
 # question 2. Keep items that meet a certain condition
+number_array2= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+number_array2.keep_if {
+	|digit|
+	digit > 4
+}	 
 
-different_greetings.keep_if {
-	|greeting|
-	greeting.length > 5
+p number_array2
+
+# question 3. A different method that filters a data structure for only
+# items satisfying a certain condition 
+
+number_array3= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+odd_numbers= number_array3.select! {
+	|digit|
+	digit.odd?
 }
-p different_greetings
+p odd_numbers
 
