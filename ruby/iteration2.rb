@@ -52,6 +52,16 @@ different_greetings= ["bojour", "hola", "ciao", "namaste", "salaam", "hallo"]
 #will delete the greeting who's character length is less than or equal to 5
 different_greetings.delete_if {
 	|greeting|
-	greeting.length <= 5
+	greeting.length < 5
 }
 p different_greetings
+
+
+# question 2. Keep items that meet a certain condition
+
+different_greetings.keep_if {
+	|greeting|
+	greeting.length > 5
+}
+p different_greetings
+
