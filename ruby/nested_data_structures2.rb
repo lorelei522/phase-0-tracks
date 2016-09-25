@@ -43,5 +43,9 @@ p Bloomingdales[:second_floor][:suit_section][:employees]= "3"
 p Bloomingdales[:second_floor][:suit_section]
 
 
-
+#update data in a nested array.
+#Change Kenzo in belt brands array to Polo. Kenzo is located in index 1
+p Bloomingdales[:second_floor][:belt_section][:belt_brands][1]= "Polo"
+#print to see the change
+p Bloomingdales[:second_floor][:belt_section][:belt_brands]
 
