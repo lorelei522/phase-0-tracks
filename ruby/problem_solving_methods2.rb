@@ -60,9 +60,9 @@ fibonacci(100) #should be 218922995834555169026
 # Release 2: Sort an array
 # Bubble sort
 
-def bubble_sort(array)
+def bubble_sort(array2)
   #assign to variable length of array.
-  number = array.length
+  number = array2.length
   #loop through method
   loop do
     #declare boolean. Keeps track of whether or not a given number has been swapped with the rest.
@@ -70,9 +70,9 @@ def bubble_sort(array)
     #start a loop for length of array minus 1 times. So will go through the entire array
     (number-1).times do |i|
       #if an index is greater than the index next to it
-      if array[i] > array[i+1]
+      if array2[i] > array2[i+1]
         #switch the array index with the one next to it.
-        array[i], array[i+1] = array[i+1], array[i]
+        array2[i], array2[i+1] = array2[i+1], array2[i]
         swapped = true
       end
     end
@@ -80,7 +80,7 @@ def bubble_sort(array)
   break if not swapped
   end
   
-  array
+  array2
 end
 
 
