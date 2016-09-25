@@ -164,3 +164,29 @@ new_hash3=hash3.select {
 }
 
 p new_hash3
+
+
+#4
+hash4 = {
+	one: 1 ,
+	two: 2 ,
+	three: 3 ,
+	four: 4 ,
+	five: 5 ,
+	six: 6 ,
+	seven: 7 ,
+	eight: 8 ,
+	nine: 9 ,
+	ten: 10
+}
+
+puts "Here is Hash 4"
+
+p hash4
+#.drop_while. Drops all the integers that are less than 5
+new_hash4= hash4.drop_while {
+	|word, integer|
+	integer <5 
+}
+
+p new_hash4
