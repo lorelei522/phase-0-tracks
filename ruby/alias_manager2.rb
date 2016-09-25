@@ -56,10 +56,11 @@ end
 #Driver code
 #p name_converter("Lorelei Lopez")
 
-# User interface and store the names
+# User interface
 
 user_input = ""
 stored_names= {} 
+#hash will show the original name and the new name
 
 puts "Welcome to the Spy Name Converter"
 
@@ -71,3 +72,11 @@ until user_input == "quit"
       puts "Spy name is #{name_converter(user_input)}"
     end
 end
+
+#Release 2 
+#iterate through my stored_names hash and print out each original name and new name
+puts "Here are all the names from your Spy Converter Session:"
+
+stored_names.each do |original_name, spy_name|
+	puts "#{original_name} is also known as #{spy_name}"
+end	
