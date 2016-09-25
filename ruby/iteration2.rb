@@ -11,3 +11,17 @@ def learning
 end	
 
 learning { |lesson| puts "#{lesson} is what is being taught today." }
+
+
+
+#array
+broadway_musicals= ["Beautiful", "Wicked", "The Lion King", "Jersey Boys", "Hamilton"]
+
+#hash
+colleges= {
+	Villanova: "Villanova, PA"
+	Yale: "New Haven, CT"
+	Harvard: "Cambridge, MA"
+	UNC: "Chapel Hill, NC"
+	Northeastern: "Boston, MA"
+}
