@@ -24,3 +24,10 @@ Bloomingdales = {
 		}
 	}
 }
+
+#Print some data inside the data structure
+p Bloomingdales[:first_floor][:floor_name]
+p Bloomingdales[:first_floor][:handbag_section][:employees]
+p Bloomingdales[:first_floor][:perfume_section][2]
+
+#push some new data
