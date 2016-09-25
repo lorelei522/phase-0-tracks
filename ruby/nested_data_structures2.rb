@@ -30,4 +30,8 @@ p Bloomingdales[:first_floor][:floor_name]
 p Bloomingdales[:first_floor][:handbag_section][:employees]
 p Bloomingdales[:first_floor][:perfume_section][2]
 
-#push some new data
+#push some new data into a section
+p Bloomingdales[:second_floor][:belt_section][:belt_brands].push("Louis Vuitton")
+p Bloomingdales
+#print that new data. Since it was the last one added can use -1 as the index to call
+p Bloomingdales[:second_floor][:belt_section][:belt_brands][-1]
