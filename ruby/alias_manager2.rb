@@ -54,4 +54,20 @@ change_name.join('').split(' ').map! { |x|
 end
 
 #Driver code
-p name_converter("Lorelei Lopez")
+#p name_converter("Lorelei Lopez")
+
+# User interface and store the names
+
+user_input = ""
+stored_names= {} 
+
+puts "Welcome to the Spy Name Converter"
+
+until user_input == "quit" 
+  puts "What is your original name? If done type in 'quit' please."
+  user_input = gets.chomp
+    if user_input != "quit"
+      stored_names[user_input] = name_converter(user_input)
+      puts "Spy name is #{name_converter(user_input)}"
+    end
+end
