@@ -83,4 +83,15 @@ def bubble_sort(array2)
   array2
 end
 
+#driver code for bubble sort
+array2= [4, 1, 14, 56, 23, 5]
+puts "Original Array2:" 
+p array2
+puts "Array 2 with Bubble Sort:"
+p bubble_sort(array2)
 
+array3= [44, 34, 12, 87, 72, 1]
+puts "Original Array3:" 
+p array3
+puts "Array 3 with Bubble Sort:"
+p bubble_sort(array3)
