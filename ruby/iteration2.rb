@@ -88,3 +88,28 @@ new_number_array4= number_array4.drop_while {
 }
 
 p new_number_array4
+
+
+#All the above for hashes
+
+hash1 = {
+	one: 1 ,
+	two: 2 ,
+	three: 3 ,
+	four: 4 ,
+	five: 5 ,
+	six: 6 ,
+	seven: 7 ,
+	eight: 8 ,
+	nine: 9 ,
+	ten: 10
+}
+
+p hash1
+#will delete from hash if the word(the key in this example) length is less than=4
+hash1.delete_if {
+	|word, integer|
+	word.length <= 4
+}
+
+p hash1
