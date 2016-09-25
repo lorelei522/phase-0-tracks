@@ -44,7 +44,13 @@ change_name.map! {
 	end		
 }
 
-
+# now that the letters have changed to their next consonant or next vowel 
+# 1- join the letters into a string.
+# 2- split into individual words again
+# 3- .map! to iterate through each individual word and just capitalize the first letter
+# 	join the words into the original string format
+change_name.join('').split(' ').map! { |x|
+		x.capitalize}.join(' ')
 end
 
 p name_converter("Lorelei Lopez")
