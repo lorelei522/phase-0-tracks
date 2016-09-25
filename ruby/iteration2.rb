@@ -91,7 +91,7 @@ p new_number_array4
 
 
 #All the above for hashes
-
+#1
 hash1 = {
 	one: 1 ,
 	two: 2 ,
@@ -104,7 +104,7 @@ hash1 = {
 	nine: 9 ,
 	ten: 10
 }
-
+puts "Here is Hash 1:"
 p hash1
 #will delete from hash if the word(the key in this example) length is less than=4
 hash1.delete_if {
@@ -113,3 +113,28 @@ hash1.delete_if {
 }
 
 p hash1
+
+#2
+hash2 = {
+	one: 1 ,
+	two: 2 ,
+	three: 3 ,
+	four: 4 ,
+	five: 5 ,
+	six: 6 ,
+	seven: 7 ,
+	eight: 8 ,
+	nine: 9 ,
+	ten: 10
+}
+
+puts "Here is Hash 2"
+
+p hash2
+#will keep the items that are even
+hash2.keep_if {
+	|word, integer|
+	integer.even?
+}
+
+p hash2
