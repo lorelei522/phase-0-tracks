@@ -56,15 +56,21 @@ class Bird
 end
 
 #Driver Code
-tweety= Bird.new
-tweety.chirp(6)
-tweety.flying(100)
+#tweety= Bird.new
+#tweety.chirp(6)
+#tweety.flying(100)
 
 
+our_bird_array= []
 
+50.times do
+	our_bird_array << Bird.new
+end
 
-
-
+our_bird_array.each do |bird_instance|
+	bird_instance.chirp(2)
+	bird_instance.flying(100)
+end	
 
 
 
