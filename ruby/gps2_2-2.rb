@@ -73,3 +73,35 @@ def nice_print(grocery_list)
 end
 
 nice_print(list)
+
+=begin
+
+#Reflection
+What did you learn about pseudocode from working on this challenge?
+
+I learned that proper pseudocoding makes life easier when you start to
+actually code your work. Taking the time to think it out beforehand made
+this assignment go smoothly
+
+What are the tradeoffs of using arrays and hashes for this challenge?
+For the kind of list they wanted us to have a hash was definitely necessary.
+A hash properly stored the food item and the quantity.
+
+What does a method return?
+The method will return the action stated within the method.
+
+What kind of things can you pass into methods as arguments?
+Strings, integers, hashes, arrays
+
+How can you pass information between methods?
+You can use what is produced from a previous method and use it as the argument
+for the next method. In the assignment above we created a hash and then used that
+hash in the arguments the other methods.
+
+What concepts were solidified in this challenge, and what concepts are still confusing?
+A big concept that was solidified is that I am able to pass information between methods.
+Another thing is really taking the time to refactor. I will remind myself of the 3 keys
+to refactoring (readable, dry, efficiency). Taking the time to refactor will really help me
+make sure that my code is the best I can do.
+
+=end
