@@ -8,7 +8,7 @@ Puppy
 
 Attributes-------------
 name: varies
-color: varies
+fur color: varies
 friendly: yes
 paws: 4
 tail: 1
@@ -20,5 +20,5 @@ jump
 fetch
 rollover
 
-	
+
 =end
