@@ -1,5 +1,9 @@
 class Puppy
 
+	def initialize
+		puts "Initializing new puppy instance...."
+	end	
+
 	def fetch(toy)
 		puts "I brought back the #{toy}!"
 		toy
@@ -30,3 +34,39 @@ fido.speak(5)
 fido.roll_over
 fido.dog_years(2)
 fido.wag_tail
+
+#----------
+#Release 2- New Class
+
+
+class Bird
+
+	def initialize
+		puts "Initializing bird instance...."
+	end	
+
+	def chirp(number)
+		number.times {puts "Chirp chirp!"}
+	end	
+
+	def flying(altitude)
+		puts "This bird is flying at #{altitude} feet."
+	end	
+
+end
+
+#Driver Code
+tweety= Bird.new
+tweety.chirp(6)
+tweety.flying(100)
+
+
+
+
+
+
+
+
+
+
+
