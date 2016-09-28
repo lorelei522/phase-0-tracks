@@ -13,12 +13,16 @@
 
 #Release 3- Refactor take out those getter methods for age and ethnicity and just put them
 #in attr_reader. Put gender as attr_accessor so it can be changed outside the class
+
+#Release 4- Create a bunch of santas. Use an array to house them. Use .sample to have
+# randomly selected ethnicities and gender from the ehtnicity and gender arrays.
+# use rand to give the santas a random age from 0 to 140
 class Santa
 
-	attr_reader :age, :ethnicity
-	attr_accessor :gender
+	attr_reader :reindeer_ranking
+	attr_accessor :gender, :age, :ethnicity
 
-	def initialize(gender, ethnicity)
+	def initialize #(gender, ethnicity)
 		@gender= gender
 		@ethnicity= ethnicity
 		@reindeer_ranking= ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
@@ -56,17 +60,21 @@ class Santa
 	#def ethnicity
 	#	p @ethnicity
 	#end		
+
+	def about
+		puts "This Santa is #{@ethnicity} and #{@gender} and is #{@age}."
+	end	
 end
 
 
 
 #Driver Code for Release 0
-nick= Santa.new("female", "Latino")
-nick.speak
-nick.eat_milk_and_cookies("chocolate chip")
-nick.celebrate_birthday
-nick.get_mad_at("Dancer")
-p nick.gender= "male"		
+#nick= Santa.new("female", "Latino")
+#nick.speak
+#nick.eat_milk_and_cookies("chocolate chip")
+#nick.celebrate_birthday
+#nick.get_mad_at("Dancer")
+#p nick.gender= "male"		
 
 #Driver code for Release 1
 
@@ -99,3 +107,24 @@ p nick.gender= "male"
 #	x.age
 #	x.ethnicity
 #end	
+
+
+#Release 4
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+santas= []
+
+50.times do
+	santa=  Santa.new
+	santa.gender = example_genders.sample
+	santa.ethnicity= example_ethnicities.sample
+	santa.age= rand(140)
+
+	santas << santa
+end	
+
+santas.each do |x|
+	x.about
+end
