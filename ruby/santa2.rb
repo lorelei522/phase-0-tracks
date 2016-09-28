@@ -22,7 +22,7 @@ class Santa
 	attr_reader :reindeer_ranking
 	attr_accessor :gender, :age, :ethnicity
 
-	def initialize #(gender, ethnicity)
+	def initialize (gender, ethnicity)
 		@gender= gender
 		@ethnicity= ethnicity
 		@reindeer_ranking= ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
@@ -117,14 +117,13 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
 santas= []
 
 50.times do
-	santa=  Santa.new
-	santa.gender = example_genders.sample
-	santa.ethnicity= example_ethnicities.sample
+	santa=  Santa.new(example_genders.sample, example_ethnicities.sample) 
 	santa.age= rand(140)
-
 	santas << santa
 end	
 
 santas.each do |x|
-	x.about
+	puts "This santa has a gender of #{x.gender} and ethnicity of #{x.ethnicity}"
+	puts "There #{x.age} years old!"
 end
+
