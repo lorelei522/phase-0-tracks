@@ -35,18 +35,27 @@ end
 
 #Driver code for Release 1
 
-santas = []
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
+#santas = []
+#santas << Santa.new("agender", "black")
+#santas << Santa.new("female", "Latino")
+#santas << Santa.new("bigender", "white")
+#santas << Santa.new("male", "Japanese")
+#santas << Santa.new("female", "prefer not to say")
+#santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+#santas << Santa.new("N/A", "N/A")
 
-#just seeing that I can iterate through the santas array and conduct the instance
-# methods in the Santa class on each of the santas in the array.
-santas.each do |x|
-	x.speak
-	x.eat_milk_and_cookies("snickerdoodle")
-end	
+#Iterate through the array of new Santas and conduct each of the instances
+#santas.each do |x|
+#	x.speak
+#	x.eat_milk_and_cookies("snickerdoodle")
+#end	
+
+#This will create 7 santas with a different gender and ethnicity from the gender and ethnicities arrays
+# and store the new santas in a santas array.
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+example_genders.length.times do |i|
+  santas << Santa.new(example_genders[i], example_ethnicities[i])
+end
+
