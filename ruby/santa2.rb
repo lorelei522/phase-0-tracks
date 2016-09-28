@@ -10,7 +10,13 @@
 #celebrate birthday take the @age and add 1 year for a new_age
 #get_mad_at method take a reindeer name as an arugument. make reindeer ranking accessible with @
 
+
+#Release 3- Refactor take out those getter methods for age and ethnicity and just put them
+#in attr_reader. Put gender as attr_accessor so it can be changed outside the class
 class Santa
+
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
 
 	def initialize(gender, ethnicity)
 		@gender= gender
@@ -39,17 +45,17 @@ class Santa
 		p @reindeer_ranking
 	end	
 
-	def gender=(new_gender)
-		@gender=new_gender
-	end	
+	#def gender=(new_gender)
+	#	@gender=new_gender
+	#end	
 
-	def age
-		p @age
-	end
+	#def age
+	#	p @age
+	#end
 	
-	def ethnicity
-		p @ethnicity
-	end		
+	#def ethnicity
+	#	p @ethnicity
+	#end		
 end
 
 
