@@ -19,10 +19,9 @@
 # use rand to give the santas a random age from 0 to 140
 class Santa
 
-	attr_reader :reindeer_ranking
 	attr_accessor :gender, :age, :ethnicity
 
-	def initialize (gender, ethnicity)
+	def initialize(gender, ethnicity)
 		@gender= gender
 		@ethnicity= ethnicity
 		@reindeer_ranking= ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
@@ -74,7 +73,8 @@ end
 #nick.eat_milk_and_cookies("chocolate chip")
 #nick.celebrate_birthday
 #nick.get_mad_at("Dancer")
-#p nick.gender= "male"		
+#nick.gender= "male"		
+#p nick.gender
 
 #Driver code for Release 1
 
@@ -114,16 +114,33 @@ end
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-santas= []
+#-----------------------
+# IF I STORED THE SANTAS IN AN ARRAY
+#santas= []
 
-50.times do
-	santa=  Santa.new(example_genders.sample, example_ethnicities.sample) 
-	santa.age= rand(140)
-	santas << santa
+#50.times do
+#	santa=  Santa.new(example_genders.sample, example_ethnicities.sample) 
+#	santa.age= rand(140)
+#	santas << santa
+#end	
+
+#santas.each do |x|
+#	puts "This santa has a gender of #{x.gender} and ethnicity of #{x.ethnicity}"
+#	puts "There #{x.age} years old!"
+#end
+
+#-----------------------
+
+#Don't store the many santas in array and print their info
+
+50.times do |i|
+	santas = Santa.new(example_genders.sample, example_ethnicities.sample) 
+	santas.age= rand(140)
+	puts "This santa has a gender of #{santas.gender} and ethnicity of #{santas.ethnicity}."
+	puts "This Santa is #{santas.age} years old!"
 end	
 
-santas.each do |x|
-	puts "This santa has a gender of #{x.gender} and ethnicity of #{x.ethnicity}"
-	puts "There #{x.age} years old!"
-end
+
+
+
 
