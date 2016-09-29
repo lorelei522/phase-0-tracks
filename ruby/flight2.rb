@@ -23,5 +23,13 @@ end
 class Plane
 
 	include Flight
-	
+
 end
+
+#Driver Code
+
+bird=  Bird.new
+bird.take_off(800)
+
+plane= Plane.new
+plane.take_off(30000)
