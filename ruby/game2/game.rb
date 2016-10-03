@@ -67,7 +67,7 @@ class Game
 			puts "WINNER WINNER CHICKENT DINNER! You won the game, the word was #{@word}!"
 			@won_game= true
 		else
-			puts "Uh oh. You lost :( "
+			puts "Uh oh. The word was #{@word.upcase}.... You lost :("
 		end
 	end		
 
@@ -112,6 +112,8 @@ new_game= Game.new(word)
 new_game.word
 system "clear"
 
+puts "Here is the word.."   
+p new_game.game_progress
 puts "Now #{player_2} you have #{new_game.guess_count} guesses to guess #{player_1}'s word! Good luck!"
 
 while new_game.guess_count > 0
