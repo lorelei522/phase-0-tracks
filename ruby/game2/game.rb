@@ -31,7 +31,7 @@ class Game
 
 	def initialize(word)
 		@word = word
-		@game_progress= "_" * word.length
+		@game_progress= " __ " * word.length
 		@guess_count= word.length + 3
 		@letters= []
 		@won_game= false
@@ -81,15 +81,34 @@ class Game
 end
 
 
-#Driver Code
+#Driver Code-- Initial Driver code for me to test out specifics of the game
+#new_game=  Game.new("election")	
+#p new_game.word
+#p new_game.game_progress
+#while new_game.guess_count > 0
+#	puts "Guess a letter"
+#	letter= gets.chomp
+#	new_game.checker(letter)
+#	break if new_game.game_over?
+#end
+#new_game.won_game
 
-new_game=  Game.new("election")	
-p new_game.word
-p new_game.game_progress
-while new_game.guess_count > 0
-	puts "Guess a letter"
-	letter= gets.chomp
-	new_game.checker(letter)
-	break if new_game.game_over?
-end
-new_game.won_game	
+
+# Release 1-  Driver Code/User Interface to bridge gap between human users and the class
+
+puts "Welcome to Guess that Word!"
+puts "Player 1 please enter your name"
+player_1= gets.chomp.capitalize
+puts "Player 2 please enter your name"
+player_2= gets.chomp.capitalize
+
+puts "HEY HEY HEY THERE #{player_2} No cheating please look away now!"
+
+puts "#{player_1} please enter any word(only letters. no punctuations or special characters please)"
+
+word= gets.chomp
+#create new game 
+#new_game= Game.new(word)
+#new_game.word
+#system "clear"
+#puts ""
