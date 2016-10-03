@@ -64,7 +64,7 @@ class Game
 
 	def won_game
 		if @game_progress == @word
-			puts "WINNER WINNER CHICKENT DINNER!. You won the game, the word was #{@word}!"
+			puts "WINNER WINNER CHICKENT DINNER! You won the game, the word was #{@word}!"
 			@won_game= true
 		else
 			puts "Uh oh. You lost :( "
@@ -121,3 +121,5 @@ while new_game.guess_count > 0
 	break if new_game.game_over?
 end
 new_game.won_game	
+
+puts "Thank you for playing #{player_1} and #{player_2}"
