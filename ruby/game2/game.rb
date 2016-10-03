@@ -7,7 +7,7 @@
 # store the letters in an empty array
 
 #method to check letters-  
-	# will see if the letter has been checked before. 
+	# will see if the letter has been checked before. if True statement?
 	# Push the letter into the letter array. 
 	# Give a message if it correct, give a message if wrong.
 	# Show the players the progress of the word  "__ __ __ __"
@@ -20,11 +20,39 @@ class Game
 
 	def initialize(word)
 		@word = word
-		@game_progress= word.length * "__"
+		@game_progress= "_" * word.length
 		@guess_count= word.length + 3
 		@letters= []
 	end	
 
 	def checker(letter)
+		puts "You already guessed #{letter}! Try another letter!" if @letters.included?(letter)
 
-end	
+		if word.include?(letter)
+			puts "Great job! You are almost there"
+			index= 0
+			word.index do |i|
+				if i == letter
+				game_progress[index]= i
+				end
+				index += 1
+			end
+			puts @game_progress
+		else
+			puts "Incorrect letter! Try another letter!"
+			puts @game_progress
+		end
+	
+		@guess_count -= 1
+		@letters << letter
+		@game_progress
+		puts "Choose wisely...you have #{@guess_count} guess(es) left!"					
+	end	
+end
+
+
+#Driver Code
+
+new_game=  Game.new("election")	
+p new_game.word
+p new_game.game_progress
