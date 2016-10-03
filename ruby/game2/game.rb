@@ -39,14 +39,14 @@ class Game
 	end	
 
 	def checker(letter)
-		puts "You already guessed #{letter}! Try another letter!" if @letters.included?(letter)
-
-		if word.include?(letter)
+		return puts "You already guessed #{letter}! Try another letter!" if @letters.include?(letter)
+		
+		if @word.include?(letter)
 			puts "Great job! You are almost there"
 			index= 0
-			word.index do |i|
+			word.each_char do |i|
 				if i == letter
-				game_progress[index]= i
+				game_progress[index] = i
 				end
 				index += 1
 			end
@@ -56,10 +56,10 @@ class Game
 			puts @game_progress
 		end
 	
-		@guess_count -= 1
-		@letters << letter
-		@game_progress
-		puts "Choose wisely...you have #{@guess_count} guess(es) left!"					
+			@guess_count -= 1
+			@letters << letter
+			@game_progress
+			puts "Choose wisely...you have #{@guess_count} guess(es) left!"					
 	end	
 
 	def won_game
@@ -77,6 +77,7 @@ class Game
 		end
 		@game_over
 	end		
+
 end
 
 
@@ -85,3 +86,10 @@ end
 new_game=  Game.new("election")	
 p new_game.word
 p new_game.game_progress
+while new_game.guess_count > 0
+	puts "Guess a letter"
+	letter= gets.chomp
+	new_game.checker(letter)
+	break if new_game.game_over?
+end
+new_game.won_game	
