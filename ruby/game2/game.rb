@@ -124,4 +124,4 @@ while new_game.guess_count > 0
 end
 new_game.won_game	
 
-puts "Thank you for playing #{player_1} and #{player_2}"
+puts "Thank you for playing #{player_1} and #{player_2}!"
