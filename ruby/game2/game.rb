@@ -35,6 +35,7 @@ class Game
 		@guess_count= word.length + 3
 		@letters= []
 		@won_game= false
+		@game_over= false
 	end	
 
 	def checker(letter)
@@ -68,7 +69,14 @@ class Game
 		else
 			puts "Uh oh. You lost :( "
 		end
-	end			
+	end		
+
+	def game_over?
+		if @game_progress == word || @guess_count == 0
+			@game_over = true
+		end
+		@game_over
+	end		
 end
 
 
