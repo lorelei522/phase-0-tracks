@@ -13,6 +13,17 @@
 	# Show the players the progress of the word  "__ __ __ __"
 	# Show the players how many guesses they have left.
 
+# method for game over-
+	# IF game_progress == word or the guess count == 0
+		#TRUE
+
+# method for winning the game
+	# IF game_progress== word
+		#won_game TRUE
+	# else person has lost the game	
+
+
+
 class Game
 
 	attr_reader :word
