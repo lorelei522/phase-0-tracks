@@ -31,7 +31,7 @@ class Game
 
 	def initialize(word)
 		@word = word
-		@game_progress= " __ " * word.length
+		@game_progress= "_" * word.length
 		@guess_count= word.length + 3
 		@letters= []
 		@won_game= false
@@ -102,13 +102,22 @@ player_1= gets.chomp.capitalize
 puts "Player 2 please enter your name"
 player_2= gets.chomp.capitalize
 
-puts "HEY HEY HEY THERE #{player_2} No cheating please look away now!"
+puts "HEY HEY HEY THERE #{player_2} ---- NO CHEATING please look away now!"
 
 puts "#{player_1} please enter any word(only letters. no punctuations or special characters please)"
-
 word= gets.chomp
+
 #create new game 
-#new_game= Game.new(word)
-#new_game.word
-#system "clear"
-#puts ""
+new_game= Game.new(word)
+new_game.word
+system "clear"
+
+puts "Now #{player_2} you have #{new_game.guess_count} guesses to guess #{player_1}'s word! Good luck!"
+
+while new_game.guess_count > 0
+	puts "#{player_2} guess a letter"
+	letter= gets.chomp.downcase
+	new_game.checker(letter)
+	break if new_game.game_over?
+end
+new_game.won_game	
