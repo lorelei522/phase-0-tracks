@@ -13,14 +13,14 @@
 	# Show the players the progress of the word  "__ __ __ __"
 	# Show the players how many guesses they have left.
 
-# method for game over-
-	# IF game_progress == word or the guess count == 0
-		#TRUE
-
 # method for winning the game
 	# IF game_progress== word
 		#won_game TRUE
 	# else person has lost the game	
+
+# method for game over-
+	# IF game_progress == word or the guess count == 0
+		#TRUE
 
 
 
@@ -34,6 +34,7 @@ class Game
 		@game_progress= "_" * word.length
 		@guess_count= word.length + 3
 		@letters= []
+		@won_game= false
 	end	
 
 	def checker(letter)
@@ -59,6 +60,15 @@ class Game
 		@game_progress
 		puts "Choose wisely...you have #{@guess_count} guess(es) left!"					
 	end	
+
+	def won_game
+		if @game_progress == @word
+			puts "WINNER WINNER CHICKENT DINNER!. You won the game, the word was #{@word}!"
+			@won_game= true
+		else
+			puts "Uh oh. You lost :( "
+		end
+	end			
 end
 
 
