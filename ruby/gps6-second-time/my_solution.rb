@@ -4,18 +4,21 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# links file to this class in the same directory.
+# require will use the path name to find appropriate file outside the directory.
+
 require_relative 'state_data'
 
 class VirusPredictor
 
+  #initializing. Takes 3 arguments. Declaring instance variables on state, population and population_density.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  #Calling predicted_deaths and speed_of_spread methods.
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -23,6 +26,9 @@ class VirusPredictor
 
   private
 
+  #Runs conditional statement based on the population density it multiples the populations
+  #Input- population density, population, state.
+  #Output- number of deaths.
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,6 +47,9 @@ class VirusPredictor
 
   end
 
+  #Input- Population density and state
+  #Output- Nil. 
+  #Running conditional statements on each states population_density to determine speed.
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
