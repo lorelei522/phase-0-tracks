@@ -29,7 +29,7 @@ class VirusPredictor
   #Runs conditional statement based on the population density it multiples the populations
   #Input- population density, population, state.
   #Output- number of deaths.
-  def predicted_deaths
+  def predicted_deaths #(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -50,7 +50,7 @@ class VirusPredictor
   #Input- Population density and state
   #Output- Nil. 
   #Running conditional statements on each states population_density to determine speed.
-  def speed_of_spread         #in months
+  def speed_of_spread #(population_density, state)        #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -79,9 +79,9 @@ end
  # initialize VirusPredictor for each state
 
 
-#STATE_DATA.each do|state, value|
-#    VirusPredictor.new(state, value[:population_density], value[:population]).virus_effects
-#end
+STATE_DATA.each do|state, value|
+    VirusPredictor.new(state, value[:population_density], value[:population]).virus_effects
+end
 
 
 
