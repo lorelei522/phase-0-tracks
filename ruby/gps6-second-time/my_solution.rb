@@ -1,6 +1,6 @@
 # Virus Predictor
 
-# I worked on this challenge.....
+# I worked on this challenge Michael Taylor.
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
