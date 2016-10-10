@@ -115,18 +115,16 @@ function randomTest(integer) {
 }
 
 
+// Driver Code notes for Release 2 
 
+// Add driver code that does the following 10 times: 
+// 			generates an array, prints the array, 
+//			feeds the array to your "longest word" function,
+//			and prints the result.
 
+// make a loop that will do this 10 times.
+//console.log(randomTest(10));
 
-
-
-
-
-
-
-
-
-
-// Driver Code notes for Release 2 Add driver code that does the following 10 times: 
-// generates an array, prints the array, feeds the array to your "longest word" 
-// function, and prints the result.
+for (l = 0; l < 10; l++) {
+	console.log("Longest word in the random array is " + longest_function(randomTest(8)));
+}
