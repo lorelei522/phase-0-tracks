@@ -3,6 +3,9 @@
 
 
 // Reverse the string with a loop
+// newString will hold the new reverse
+// Loop starts with the last letter by use -1
+// returns the new string
 
 
 function reverse(str) {
