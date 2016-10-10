@@ -71,3 +71,9 @@ var rome= {name: 'Rome', mainlanguage: "italian", country: "Italy"};
 var portland= {name: 'Portland', mainlanguage: "enlgish", country: "USA"};
 var london= {name: 'London', mainlanguage: "english", country: "England"};
 var mendoza= {name: 'Mendoza', mainlanguage: "spanish", country: "Argentina"};
+
+console.log(KeyValueMatch(newyork, london)) 
+console.log(KeyValueMatch(portland, mendoza)) 
+console.log(KeyValueMatch(madrid, mendoza)) 
+console.log(KeyValueMatch(rome, madrid)) 
+console.log(KeyValueMatch(newyork, portland)) 
