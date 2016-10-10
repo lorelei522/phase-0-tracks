@@ -48,3 +48,15 @@ console.log(longest_function(array3));
 // Iterate through the key and value of each example.
 // If any matches occur it will return true.
 // else return false
+
+
+function KeyValueMatch(object1, object2) {
+	for (var key in object1) {
+		if (object2[key] == object1[key]) {
+			console.log("Do these two objects have a key-value match?");
+				return true;
+		}
+	}
+			console.log("Do these two objects have a key-value match?");
+				return false;
+}
