@@ -99,6 +99,22 @@ console.log(KeyValueMatch(newyork, portland))
 // return the finish array
 
 
+function randomTest(integer) {
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	var generatedWord = '';
+	var randomWords = [];
+
+
+	for (var i = 0; i < integer; i ++) {
+		for (var index = 0; index < (Math.floor(Math.random() * 10) + 1); index++) {
+			generatedWord += alphabet[Math.floor(Math.random() * 26)];
+		}
+		randomWords[i]= generatedWord;
+	}
+	return randomWords
+}
+
+
 
 
 
