@@ -38,3 +38,13 @@ console.log(longest_function(array2));
 var array3= ["Union Square", "Upper East Side", "Financial District", "Soho", "Chinatown"]
 console.log("Longest string in above array is:");
 console.log(longest_function(array3));
+
+
+// Release 1
+// function that takes two objects and checks to see if the objects 
+// share at least one key-value pair.
+
+//Function will take two examples as arugments for comparison
+// Iterate through the key and value of each example.
+// If any matches occur it will return true.
+// else return false
