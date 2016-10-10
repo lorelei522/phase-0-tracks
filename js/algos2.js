@@ -23,3 +23,8 @@ function longest(strings) {
 	return longest;
 };
 
+// Add driver code that will take a few different arrays as examples
+
+var array= ["long phrase","longest phrase","longer phrase"];
+console.log("Longest string in above array is:");
+console.log(longest(array));
