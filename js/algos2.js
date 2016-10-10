@@ -77,3 +77,40 @@ console.log(KeyValueMatch(portland, mendoza))
 console.log(KeyValueMatch(madrid, mendoza)) 
 console.log(KeyValueMatch(rome, madrid)) 
 console.log(KeyValueMatch(newyork, portland)) 
+
+
+//Release 2 Generate Random Test Data
+//Write a function that takes an integer for length, and builds and returns an 
+//array of strings of the given length. So if we ran your function with an 
+//argument of 3, we would get an array of 3 random words back (the words don't 
+//have to be actual sensical English words 
+
+//function will take an integer as an arugment
+// each word will be random, with a minimum of 1 letter and a max of 10 letters.
+
+// Steps:
+// take an integer arugment for randomTest function
+// declare a variable with the letters of the alphabet
+// declare an empty variable for each word
+// create an empty array to hold the words it will create
+// Built in methods to use: Math.floor() rounds down, Math.random() returns a random number
+// 
+// push the new words into the empty array
+// return the finish array
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Driver Code notes for Release 2 Add driver code that does the following 10 times: 
+// generates an array, prints the array, feeds the array to your "longest word" 
+// function, and prints the result.
