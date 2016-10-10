@@ -60,3 +60,14 @@ function KeyValueMatch(object1, object2) {
 			console.log("Do these two objects have a key-value match?");
 				return false;
 }
+
+
+//Add driver code to test out KeyValueMatch function
+// Cities of the World
+
+var newyork= {name: 'New York City', mainlanguage: "english", country: "USA"};
+var madrid= {name: 'Madrid', mainlanguage: "spanish", country: "Spain"};
+var rome= {name: 'Rome', mainlanguage: "italian", country: "Italy"};
+var portland= {name: 'Portland', mainlanguage: "enlgish", country: "USA"};
+var london= {name: 'London', mainlanguage: "english", country: "England"};
+var mendoza= {name: 'Mendoza', mainlanguage: "spanish", country: "Argentina"};
