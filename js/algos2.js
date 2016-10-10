@@ -8,3 +8,18 @@
 // iterate through each of the elements in the array.
 //Compare the first element against the next for length.
 
+function longest(strings) {
+	var firstElement= 0;
+
+	strings.forEach(function(string) {
+		if (string.length > firstElement) {
+
+			firstElement = string.length;
+			longest = string;
+		}
+
+	});
+
+	return longest;
+};
+
