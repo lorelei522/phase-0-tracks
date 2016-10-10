@@ -8,7 +8,7 @@
 // iterate through each of the elements in the array.
 //Compare the first element against the next for length.
 
-function longest(strings) {
+function longest_function(strings) {
 	var firstElement= 0;
 
 	strings.forEach(function(string) {
@@ -25,6 +25,16 @@ function longest(strings) {
 
 // Add driver code that will take a few different arrays as examples
 
-var array= ["long phrase","longest phrase","longer phrase"];
+var array= ["long phrase", "longest phrase", "longer phrase"];
 console.log("Longest string in above array is:");
-console.log(longest(array));
+console.log(longest_function(array));
+//should return "longest phrase"
+
+
+var array2= ["Gin and Soda", "Manhattan", "Tom Collins", "Old Fashion"];
+console.log("Longest string in above array is:");
+console.log(longest_function(array2));
+
+var array3= ["Union Square", "Upper East Side", "Financial District", "Soho", "Chinatown"]
+console.log("Longest string in above array is:");
+console.log(longest_function(array3));
