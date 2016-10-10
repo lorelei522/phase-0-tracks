@@ -19,3 +19,7 @@ function reverse(str) {
 }
 
 console.log(reverse("howdy"));
+
+// store the result of the function in a variable #4
+
+var myFunction= reverse("howdy");
