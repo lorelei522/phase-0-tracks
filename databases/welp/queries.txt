@@ -20,3 +20,8 @@ Angela|Jolie|Grundy Hollow Wedding Chapel|5|Love the decor
 Bradford|Pitt|The Beagle Nightclub|4|Good DJ, would try to go again
 Steven|Wonder|Amir's Towing|1|They lost my car. Very upsetting
 
+4)How do you view the data of all three tables for just one particular business? 
+
+SELECT * from reviews join users on reviews.user_id = users.id join businesses on reviews.business_id = businesses.id where businesses.id = 3;
+
+4|4|Good DJ, would try to go again|3|1|1|Bradford|Pitt|3|The Beagle Nightclub
