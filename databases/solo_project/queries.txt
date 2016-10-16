@@ -52,3 +52,18 @@ SELECT * FROM video_games;
 2|Left 4 Dead 2|2009|First-person shooter|2|true
 4|Grand Theft Auto: San Andreas|2004|Action-Adventure|1|true
 5|Red Dead Redemption|2010|Action-Adventure|1|true
+
+
+
+Release 3: Try out Different Joins
+
+---------------------------------------------------------------------------------------
+ SELECT video_games.id, video_games.name, publishers.name
+ FROM video_games
+ INNER JOIN publishers
+ ON video_games.publisher=publishers.id
+ WHERE video_games.publisher=1;
+
+4|Grand Theft Auto: San Andreas|Rockstar Games
+5|Red Dead Redemption|Rockstar Games
+---------------------------------------------------------------------------------------
