@@ -67,3 +67,13 @@ Release 3: Try out Different Joins
 4|Grand Theft Auto: San Andreas|Rockstar Games
 5|Red Dead Redemption|Rockstar Games
 ---------------------------------------------------------------------------------------
+SELECT publishers.name, video_games.name
+FROM publishers
+CROSS JOIN video_games
+ON video_games.publisher=publishers.id;
+
+Rockstar Games|Grand Theft Auto: San Andreas
+Rockstar Games|Red Dead Redemption
+Valve Corporation|Left 4 Dead
+Valve Corporation|Left 4 Dead 2
+---------------------------------------------------------------------------------------
