@@ -1,0 +1,79 @@
+Release 2: Execute SQL Queries
+
+1) Display all information in one table
+
+SELECT * FROM video_games;
+
+1|Left 4 Dead|2008|Survival Horror|2|true
+2|Left 4 Dead 2|2009|First-person shooter|2|true
+3|Grand Theft Auto: Vice City|2002|Action-Adventure|1|false
+4|Grand Theft Auto: San Andreas|2004|Action-Adventure|1|true
+5|Red Dead Redemption|2010|Action-Adventure|1|true
+
+
+2) Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE video_games SET genre="Survival Horror" WHERE name="Left 4 Dead";
+SELECT * FROM video_games;
+
+1|Left 4 Dead|2008|Survival Horror|2|true
+2|Left 4 Dead 2|2009|First-person shooter|2|true
+3|Grand Theft Auto: Vice City|2002|Action-Adventure|1|false
+4|Grand Theft Auto: San Andreas|2004|Action-Adventure|1|true
+5|Red Dead Redemption|2010|Action-Adventure|1|true
+
+3) Display the information in both tables using one query.
+
+SELECT * FROM video_games, publishers WHERE video_games.publisher= publishers.id;
+
+1|Left 4 Dead|2008|Firt-person shooter|2|true|2|Valve Corporation
+2|Left 4 Dead 2|2009|First-person shooter|2|true|2|Valve Corporation
+3|Grand Theft Auto: Vice City|2002|Action-Adventure|1|false|1|Rockstar Games
+4|Grand Theft Auto: San Andreas|2004|Action-Adventure|1|true|1|Rockstar Games
+5|Red Dead Redemption|2010|Action-Adventure|1|true|1|Rockstar Games
+
+
+4)Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT video_games.name, publishers.name FROM video_games JOIN publishers ON video_games.publisher= publishers.id;
+
+Left 4 Dead|Valve Corporation
+Left 4 Dead 2|Valve Corporation
+Grand Theft Auto: Vice City|Rockstar Games
+Grand Theft Auto: San Andreas|Rockstar Games
+Red Dead Redemption|Rockstar Games
+
+5)Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM video_games WHERE xbox360="false";
+SELECT * FROM video_games;
+
+1|Left 4 Dead|2008|Survival Horror|2|true
+2|Left 4 Dead 2|2009|First-person shooter|2|true
+4|Grand Theft Auto: San Andreas|2004|Action-Adventure|1|true
+5|Red Dead Redemption|2010|Action-Adventure|1|true
+
+
+
+Release 3: Try out Different Joins
+
+---------------------------------------------------------------------------------------
+ SELECT video_games.id, video_games.name, publishers.name
+ FROM video_games
+ INNER JOIN publishers
+ ON video_games.publisher=publishers.id
+ WHERE video_games.publisher=1;
+
+4|Grand Theft Auto: San Andreas|Rockstar Games
+5|Red Dead Redemption|Rockstar Games
+---------------------------------------------------------------------------------------
+SELECT publishers.name, video_games.name
+FROM publishers
+CROSS JOIN video_games
+ON video_games.publisher=publishers.id;
+
+Rockstar Games|Grand Theft Auto: San Andreas
+Rockstar Games|Red Dead Redemption
+Valve Corporation|Left 4 Dead
+Valve Corporation|Left 4 Dead 2
+---------------------------------------------------------------------------------------
