@@ -26,7 +26,7 @@ create_table_cmd = <<-SQL
 SQL
 
 # create the table to store resturants already tried
-create_table_cmd = <<-SQL
+create_table_cmd2 = <<-SQL
 	CREATE TABLE IF NOT EXISTS triedout (
 		id INTEGER PRIMARY KEY,
 		restaurant_name VARCHAR(255),
@@ -107,3 +107,7 @@ def print_tried_list(db)
 		puts "You tried #{resturant['restaurant_name']} recently!"
 	end	
 end
+
+#CREATE THE TABLES
+db.execute(create_table_cmd)
+db.execute(create_table_cmd2)
