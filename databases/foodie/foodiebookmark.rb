@@ -57,9 +57,11 @@ SQL
 move_restaurant_cmd = <<-SQL
 	INSERT INTO triedout (restaurant_name, location, comment, tried_out) 
 	SELECT main_list.restaurant_name, main_list.location, main_list.comment, main_list.tried_out 
-	FROM main_list WHERE tried_out= 1;
- 	
- 	DELETE FROM main_list WHERE tried_out= 1
+	FROM main_list WHERE tried_out= 1	
+SQL
+
+delete_restaurant_tried_cmd = <<-SQL
+	DELETE FROM main_list WHERE tried_out= 1
 SQL
 
 #------------------------------------------------------------------------------------
@@ -77,9 +79,10 @@ def delete_restaurant_main(db, delete_restaurant_cmd, id)
 end
 
 #method to update TriedOut. Finding it by id. Move the restaurant to triedlist
-def update_restaurant(db, update_restaurant_cmd, move_restaurant_cmd, id)
+def update_restaurant(db, update_restaurant_cmd, move_restaurant_cmd, delete_restaurant_tried_cmd, id)
 	db.execute(update_restaurant_cmd, id)
-	db.execute(move_restaurant_cmd)	
+	db.execute(move_restaurant_cmd)
+	db.execute(delete_restaurant_tried_cmd)	
 end
 
 #method to move from one list to another on basis of TriedOut being true
@@ -150,7 +153,7 @@ while user_input != 'Exit'
 		puts "Which restaurant would you like to delete? Choose the number"
 		id= gets.chomp.to_i
 
-		db.execute(delete_restaurant_cmd, id)
+		delete_restaurant_main(db, delete_restaurant_cmd, id)
 
 		puts "Here is your current list to try:"
 		print_main_list(db)	
@@ -161,10 +164,9 @@ while user_input != 'Exit'
 		puts "Would you like to update any of these restaurants to having tried it? Choose the number"
 		id= gets.chomp.to_i
 
-		db.execute(update_restaurant_cmd, id)
-		db.execute(move_restaurant_cmd)	
+		update_restaurant(db, update_restaurant_cmd, move_restaurant_cmd, delete_restaurant_tried_cmd, id)
 
-		puts "Here is your current list to try:"
+		puts "Here is your current list that you still need to try:"
 		print_main_list(db)
 
 		puts "Here is the list of restaurants that you've already tried:"
@@ -182,11 +184,9 @@ while user_input != 'Exit'
 		puts "Invalid task"
 	end	
 
-	puts "Is there something else you would like to check out today?"
+	puts "Anything else you would like to do today: Insert, Delete, Update, Mainlist, Triedlist, Exit"
 	user_input= gets.chomp.capitalize	
 end
 
-#Testing Trials
-#So insert, delete, print main list and tried list all work.
 
 
