@@ -53,7 +53,6 @@ SQL
 
 #Copy restaurant from main_list to triedout when TriedOut in main_list = 1
 #Delete restaurant from main_list after.
-
 move_restaurant_cmd = <<-SQL
 	INSERT INTO triedout(restaurant_name, location, comment, TriedOut)
 	SELECT restaurant_name, location, comment, TriedOut
@@ -61,3 +60,13 @@ move_restaurant_cmd = <<-SQL
 
 	DELETE FROM main_list
 SQL
+
+#------------------------------------------------------------------------------------
+#Add methods to complete the above tasks
+
+#method to add restaurants
+#Must reference the variable, the table, name, location and comment
+def insert_restaurants(db, insert_table_cmd, restaurant_name, location, comment)
+		db.execute(insert_table_cmd, [restaurant_name, location, comment])
+end
+
