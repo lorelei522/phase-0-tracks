@@ -46,20 +46,27 @@ delete_restaurant_cmd = <<-SQL
 	DELETE FROM main_list WHERE id = ?
 SQL
 
-#update TriedOut to true when the user tells the program they have been there
+#update TriedOut to true when the user tells the program they have been there.
+#right after move that restaurant from main list to tried list and delete from main list
 update_restaurant_cmd = <<-SQL
 	UPDATE main_list SET TriedOut = 1 WHERE id = ? 
+
+	INSERT INTO triedout(restaurant_name, location, comment, TriedOut) WHERE TriedOut= 1
+ 	SELECT restaurant_name, location, comment, TriedOut
+ 	FROM main_list
+
+ 	DELETE FROM main_list
 SQL
 
 #Copy restaurant from main_list to triedout when TriedOut in main_list = 1
 #Delete restaurant from main_list after.
-move_restaurant_cmd = <<-SQL
-	INSERT INTO triedout(restaurant_name, location, comment, TriedOut) WHERE TriedOut= 1
-	SELECT restaurant_name, location, comment, TriedOut
-	FROM main_list
+# move_restaurant_cmd = <<-SQL
+# 	INSERT INTO triedout(restaurant_name, location, comment, TriedOut) WHERE TriedOut= 1
+# 	SELECT restaurant_name, location, comment, TriedOut
+# 	FROM main_list
 
-	DELETE FROM main_list
-SQL
+# 	DELETE FROM main_list
+# SQL
 
 #------------------------------------------------------------------------------------
 #Add methods to complete the above tasks
@@ -81,9 +88,9 @@ def update_restaurant(db, update_restaurant_cmd, id)
 end
 
 #method to move from one list to another on basis of TriedOut being true
-def move_restaurant(db, move_restaurant_cmd)
-	db.execute(move_restaurant_cmd)
-end
+# def move_restaurant(db, move_restaurant_cmd)
+# 	db.execute(move_restaurant_cmd)
+# end
 
 #Show both lists "pretty"
 
@@ -111,3 +118,21 @@ end
 #CREATE THE TABLES
 db.execute(create_table_cmd)
 db.execute(create_table_cmd2)
+
+
+#User Interface
+
+puts "Welcome to the Foodie Trail! Great way to keep track of all the restaurants you want to try!"
+puts "Lets get started. Please choose from the following options:"
+puts "  Insert   	-Add new restaurants to your main list"
+puts "  Delete   	-Delete any resturants from your main list(Yup that infestation doesn't sound good)"
+puts "  Update   	-Did you finally go?!? Update that resturant to having tried it out!"
+puts "  MainList 	-See your main list and head out!"
+puts "  TriedList     -Relive the happy stomach moments and look at where you've been!"
+puts "  Exit          -Pasta la vista baby! Bye"
+
+user_input= gets.chomp.capitalize
+
+
+
+
