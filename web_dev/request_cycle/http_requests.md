@@ -13,4 +13,10 @@
 			HTTP version not supported. Maintenance.
 
 
-			
+2) What is the difference between a GET request and a POST request? When might each be used?
+	GET requests data from a specific resource(fetching documents). POST submits data to be processed to a specific resource(updating server forms).
+	GET retrieves data and POST writes data.
+
+
+	
+
