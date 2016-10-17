@@ -15,7 +15,6 @@ db = SQLite3::Database.new("foodiebookmark.db")
 db.results_as_hash = true
 
 #create different tables
-
 create_table_cmd = <<-SQL
 	CREATE TABLE IF NOT EXISTS main_list (
 		id INTEGER PRIMARY KEY,
@@ -25,3 +24,18 @@ create_table_cmd = <<-SQL
 		TriedOut BOOLEAN
 	)
 SQL
+
+# create the table to store resturants already tried
+
+create_table_cmd = <<-SQL
+	CREATE TABLE IF NOT EXISTS triedout (
+		id INTEGER PRIMARY KEY,
+		restaurant_name VARCHAR(255),
+		location VARCHAR(255),
+		comment VARCHAR(255),
+		TriedOut BOOLEAN
+	)
+SQL
+
+
+
