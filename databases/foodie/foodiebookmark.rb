@@ -70,3 +70,7 @@ def insert_restaurants(db, insert_table_cmd, restaurant_name, location, comment)
 		db.execute(insert_table_cmd, [restaurant_name, location, comment])
 end
 
+#method to delete a restaurant from the main_list
+def delete_restaurant_main(db, delete_restaurant_cmd, id)
+	db.execute(delete_restaurant_cmd, id)
+end
