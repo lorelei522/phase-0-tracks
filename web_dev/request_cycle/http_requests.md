@@ -18,5 +18,6 @@
 	GET retrieves data and POST writes data.
 
 
-	
+3)Optional bonus question: What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?	
 
+Data that has been sent from a server and stored in the browser of the user while the user is on the page. It can store it and send back together with the next request to the same server. This is typically used to see if the request came from the same browser which allows the user to staty logged on, tracking, and personaliztion.
