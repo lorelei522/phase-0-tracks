@@ -26,7 +26,6 @@ create_table_cmd = <<-SQL
 SQL
 
 # create the table to store resturants already tried
-
 create_table_cmd = <<-SQL
 	CREATE TABLE IF NOT EXISTS triedout (
 		id INTEGER PRIMARY KEY,
@@ -37,5 +36,14 @@ create_table_cmd = <<-SQL
 	)
 SQL
 
+# Insert new resturants to the main list
+
+insert_table_cmd = <<-SQL
+	INSERT INTO main_list (restaurant_name, location, comment, TriedOut) VALUES (?, ?, ?, 0)
+SQL
+
+
+
+	
 
 
