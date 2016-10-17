@@ -54,7 +54,7 @@ SQL
 #Copy restaurant from main_list to triedout when TriedOut in main_list = 1
 #Delete restaurant from main_list after.
 move_restaurant_cmd = <<-SQL
-	INSERT INTO triedout(restaurant_name, location, comment, TriedOut)
+	INSERT INTO triedout(restaurant_name, location, comment, TriedOut) WHERE TriedOut= 1
 	SELECT restaurant_name, location, comment, TriedOut
 	FROM main_list
 
@@ -80,3 +80,7 @@ def update_restaurant(db, update_restaurant_cmd, id)
 	db.execute(update_restaurant_cmd, id)	
 end
 
+#method to move from one list to another on basis of TriedOut being true
+def move_restaurant(db, move_restaurant_cmd)
+	db.execute(move_restaurant_cmd)
+end
