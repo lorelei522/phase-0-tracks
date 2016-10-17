@@ -51,8 +51,13 @@ update_restaurant_cmd = <<-SQL
 	UPDATE main_list SET TriedOut = 1 WHERE id = ? 
 SQL
 
+#Copy restaurant from main_list to triedout when TriedOut in main_list = 1
+#Delete restaurant from main_list after.
 
+move_restaurant_cmd = <<-SQL
+	INSERT INTO triedout(restaurant_name, location, comment, TriedOut)
+	SELECT restaurant_name, location, comment, TriedOut
+	FROM main_list
 
-
-
-
+	DELETE FROM main_list
+SQL
