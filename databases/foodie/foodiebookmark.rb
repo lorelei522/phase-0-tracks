@@ -97,12 +97,13 @@ end
 def print_main_list(db)
 	mainlist= db.execute("SELECT * FROM main_list")
 	mainlist.each do |restaurant|
-		puts "#{restaurant['restaurant_name']} is located at #{restaurant['location']}!"
-		if restaurant['TriedOut']== 0
-			puts "You haven't tried this restaurant yet!"
-		else
-			"You tried this resturant already!"
-		end			
+		puts restaurant["id"] + restaurant['restaurant_name'] + " is located at" + restaurant["location"]
+		puts "Here are your comments about it: #{restaurant['comment']}"
+		# if restaurant['TriedOut']== 0
+		# 	puts "You haven't tried this restaurant yet!"
+		# else
+		# 	"You tried this resturant already!"
+		# end			
 	end	
 end
 
@@ -133,6 +134,25 @@ puts "  Exit          -Pasta la vista baby! Bye"
 
 user_input= gets.chomp.capitalize
 
+# while user_input != 'Exit'
+# 	if user_input == 'Insert'
+# 		puts "What is the name of the new restaurant?"
+# 		restaurant_name= gets.chomp
+# 		puts "Where is it located?"
+# 		location= gets.chomp
+# 		puts "Any comments? ie. Must try the dessert etc."
+# 		comment= gets.chomp
+
+# 		insert_restaurants(db, insert_table_cmd, restaurant_name, location, comment)
+	
+# 	elsif user_input== 'Delete'
+# 		puts "Which restaurant would you like to delete?"
+
+# 		db.execute(delete_restaurant_cmd, id)
+# 	end	
+
+
+# end
 
 
 
