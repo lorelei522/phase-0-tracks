@@ -84,3 +84,26 @@ end
 def move_restaurant(db, move_restaurant_cmd)
 	db.execute(move_restaurant_cmd)
 end
+
+#Show both lists "pretty"
+
+def print_main_list(db)
+	mainlist= db.execute("SELECT * FROM main_list")
+	mainlist.each do |restaurant|
+		puts "#{restaurant['restaurant_name']} is located at #{restaurant['location']}!"
+		if restaurant['TriedOut']== 0
+			puts "You haven't tried this restaurant yet!"
+		else
+			"You tried this resturant already!"
+		end			
+	end	
+end
+
+#print out the triedout list pretty
+
+def print_tried_list(db)
+	triedlist= db.execute("SELECT * FROM triedout")
+	triedlist.each do |restaurant|
+		puts "You tried #{resturant['restaurant_name']} recently!"
+	end	
+end
