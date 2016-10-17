@@ -51,11 +51,11 @@ SQL
 update_restaurant_cmd = <<-SQL
 	UPDATE main_list SET TriedOut = 1 WHERE id = ? 
 
-	INSERT INTO triedout(restaurant_name, location, comment, TriedOut) WHERE TriedOut= 1
- 	SELECT restaurant_name, location, comment, TriedOut
- 	FROM main_list
+	# INSERT INTO triedout(restaurant_name, location, comment, TriedOut) WHERE TriedOut= 1
+ # 	SELECT restaurant_name, location, comment, TriedOut
+ # 	FROM main_list
 
- 	DELETE FROM main_list
+ # 	DELETE FROM main_list
 SQL
 
 #Copy restaurant from main_list to triedout when TriedOut in main_list = 1
@@ -97,8 +97,8 @@ end
 def print_main_list(db)
 	mainlist= db.execute("SELECT * FROM main_list")
 	mainlist.each do |restaurant|
-		puts restaurant["id"] + restaurant['restaurant_name'] + " is located at" + restaurant["location"]
-		puts "Here are your comments about it: #{restaurant['comment']}"
+		puts restaurant["id"].to_s + ") "+ restaurant['restaurant_name'] + " is located at " + restaurant["location"]
+		puts "Here are your comments about #{restaurant['restaurant_name']}: #{restaurant['comment']}"
 		# if restaurant['TriedOut']== 0
 		# 	puts "You haven't tried this restaurant yet!"
 		# else
@@ -128,31 +128,68 @@ puts "Lets get started. Please choose from the following options:"
 puts "  Insert   	-Add new restaurants to your main list"
 puts "  Delete   	-Delete any resturants from your main list(Yup that infestation doesn't sound good)"
 puts "  Update   	-Did you finally go?!? Update that resturant to having tried it out!"
-puts "  MainList 	-See your main list and head out!"
-puts "  TriedList     -Relive the happy stomach moments and look at where you've been!"
+puts "  Mainlist 	-See your main list and head out!"
+puts "  Triedlist     -Relive the happy stomach moments and look at where you've been!"
 puts "  Exit          -Pasta la vista baby! Bye"
 
 user_input= gets.chomp.capitalize
 
-# while user_input != 'Exit'
-# 	if user_input == 'Insert'
-# 		puts "What is the name of the new restaurant?"
-# 		restaurant_name= gets.chomp
-# 		puts "Where is it located?"
-# 		location= gets.chomp
-# 		puts "Any comments? ie. Must try the dessert etc."
-# 		comment= gets.chomp
+while user_input != 'Exit'
+ 	if user_input == 'Insert'
+ 		puts "What is the name of the new restaurant?"
+ 		restaurant_name= gets.chomp
+ 		puts "Where is it located?"
+ 		location= gets.chomp
+		puts "Any comments? ie. Must try the dessert etc."
+		comment= gets.chomp
 
-# 		insert_restaurants(db, insert_table_cmd, restaurant_name, location, comment)
+		insert_restaurants(db, insert_table_cmd, restaurant_name, location, comment)
+
+		puts "Here is your current list to try:"
+		print_main_list(db)
 	
-# 	elsif user_input== 'Delete'
-# 		puts "Which restaurant would you like to delete?"
+	elsif user_input== 'Delete'
+		puts "Here is your current list:"
+		print_main_list(db)
+		puts "Which restaurant would you like to delete? Choose the number"
+		id= gets.chomp.to_i
 
-# 		db.execute(delete_restaurant_cmd, id)
-# 	end	
+		db.execute(delete_restaurant_cmd, id)
 
+		puts "Here is your current list to try:"
+		print_main_list(db)	
 
-# end
+	elsif user_input== 'Update'
+		puts "Here is your current list:"
+		print_main_list(db)
+		puts "Would you like to update any of these restaurants to having tried? Choose the number"
+		id= gets.chomp.to_i
 
+		update_restaurant(db, update_restaurant_cmd, id)
+
+		puts "Here is your current list to try:"
+		print_main_list(db)
+
+		puts "Here is the list of restaurants that you've already tried:"
+		print_tried_list(db)
+
+	elsif user_input== 'Mainlist'
+		puts "Here is your current list to try:"
+		print_main_list(db)
+
+	elsif user_input== 'Triedlist'
+		puts "Here is the list of restaurants that you've already tried:"
+		print_tried_list(db)
+
+	else	
+		puts "Invalid task"
+	end	
+
+	puts "Is there something else you would like to check out today?"
+	user_input= gets.chomp.capitalize	
+end
+
+#Testing Trials
+#So insert, delete, print main list and tried list all work.
 
 
