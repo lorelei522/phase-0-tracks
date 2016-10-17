@@ -37,13 +37,15 @@ create_table_cmd = <<-SQL
 SQL
 
 # Insert new resturants to the main list
-
 insert_table_cmd = <<-SQL
 	INSERT INTO main_list (restaurant_name, location, comment, TriedOut) VALUES (?, ?, ?, 0)
 SQL
 
+#delete restaurants you don't want on the main list anymore
+delete_restaurant_cmd = <<-SQL
+	DELETE FROM main_list WHERE id = ?
+SQL
 
 
-	
 
 
