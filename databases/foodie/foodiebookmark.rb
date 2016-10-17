@@ -21,7 +21,7 @@ create_table_cmd = <<-SQL
 		restaurant_name VARCHAR(255),
 		location VARCHAR(255),
 		comment VARCHAR(255),
-		TriedOut BOOLEAN
+		tried_out BOOLEAN
 	)
 SQL
 
@@ -32,13 +32,13 @@ create_table_cmd2 = <<-SQL
 		restaurant_name VARCHAR(255),
 		location VARCHAR(255),
 		comment VARCHAR(255),
-		TriedOut BOOLEAN
+		tried_out BOOLEAN
 	)
 SQL
 
 # Insert new resturants to the main list
 insert_table_cmd = <<-SQL
-	INSERT INTO main_list (restaurant_name, location, comment, TriedOut) VALUES (?, ?, ?, 0)
+	INSERT INTO main_list (restaurant_name, location, comment, tried_out) VALUES (?, ?, ?, 0)
 SQL
 
 #delete restaurants you don't want on the main list anymore
@@ -49,24 +49,20 @@ SQL
 #update TriedOut to true when the user tells the program they have been there.
 #right after move that restaurant from main list to tried list and delete from main list
 update_restaurant_cmd = <<-SQL
-	UPDATE main_list SET TriedOut = 1 WHERE id = ? 
-
-	# INSERT INTO triedout(restaurant_name, location, comment, TriedOut) WHERE TriedOut= 1
- # 	SELECT restaurant_name, location, comment, TriedOut
- # 	FROM main_list
-
- # 	DELETE FROM main_list
+	UPDATE main_list SET tried_out = 1 WHERE id = ?; 
 SQL
 
 #Copy restaurant from main_list to triedout when TriedOut in main_list = 1
 #Delete restaurant from main_list after.
-# move_restaurant_cmd = <<-SQL
-# 	INSERT INTO triedout(restaurant_name, location, comment, TriedOut) WHERE TriedOut= 1
-# 	SELECT restaurant_name, location, comment, TriedOut
-# 	FROM main_list
+move_restaurant_cmd = <<-SQL
+	INSERT INTO triedout (restaurant_name, location, comment, tried_out) 
+	SELECT main_list.restaurant_name, main_list.location, main_list.comment, main_list.tried_out 
+	FROM main_list WHERE tried_out= 1	
+SQL
 
-# 	DELETE FROM main_list
-# SQL
+delete_restaurant_tried_cmd = <<-SQL
+	DELETE FROM main_list WHERE tried_out= 1
+SQL
 
 #------------------------------------------------------------------------------------
 #Add methods to complete the above tasks
@@ -74,7 +70,7 @@ SQL
 #method to add restaurants
 #Must reference the variable, the table, name, location and comment
 def insert_restaurants(db, insert_table_cmd, restaurant_name, location, comment)
-		db.execute(insert_table_cmd, [restaurant_name, location, comment])
+	db.execute(insert_table_cmd, [restaurant_name, location, comment])
 end
 
 #method to delete a restaurant from the main_list. Using the ID
@@ -82,14 +78,16 @@ def delete_restaurant_main(db, delete_restaurant_cmd, id)
 	db.execute(delete_restaurant_cmd, id)
 end
 
-#method to update TriedOut. Finding it by id
-def update_restaurant(db, update_restaurant_cmd, id)
-	db.execute(update_restaurant_cmd, id)	
+#method to update TriedOut. Finding it by id. Move the restaurant to triedlist
+def update_restaurant(db, update_restaurant_cmd, move_restaurant_cmd, delete_restaurant_tried_cmd, id)
+	db.execute(update_restaurant_cmd, id)
+	db.execute(move_restaurant_cmd)
+	db.execute(delete_restaurant_tried_cmd)	
 end
 
 #method to move from one list to another on basis of TriedOut being true
 # def move_restaurant(db, move_restaurant_cmd)
-# 	db.execute(move_restaurant_cmd)
+#  	db.execute(move_restaurant_cmd)
 # end
 
 #Show both lists "pretty"
@@ -112,7 +110,8 @@ end
 def print_tried_list(db)
 	triedlist= db.execute("SELECT * FROM triedout")
 	triedlist.each do |restaurant|
-		puts "You tried #{resturant['restaurant_name']} recently!"
+		puts restaurant["id"].to_s + ") "+ restaurant['restaurant_name']
+		puts "Here are your comments about #{restaurant['restaurant_name']}: #{restaurant['comment']}"
 	end	
 end
 
@@ -154,7 +153,7 @@ while user_input != 'Exit'
 		puts "Which restaurant would you like to delete? Choose the number"
 		id= gets.chomp.to_i
 
-		db.execute(delete_restaurant_cmd, id)
+		delete_restaurant_main(db, delete_restaurant_cmd, id)
 
 		puts "Here is your current list to try:"
 		print_main_list(db)	
@@ -162,12 +161,12 @@ while user_input != 'Exit'
 	elsif user_input== 'Update'
 		puts "Here is your current list:"
 		print_main_list(db)
-		puts "Would you like to update any of these restaurants to having tried? Choose the number"
+		puts "Would you like to update any of these restaurants to having tried it? Choose the number"
 		id= gets.chomp.to_i
 
-		update_restaurant(db, update_restaurant_cmd, id)
+		update_restaurant(db, update_restaurant_cmd, move_restaurant_cmd, delete_restaurant_tried_cmd, id)
 
-		puts "Here is your current list to try:"
+		puts "Here is your current list that you still need to try:"
 		print_main_list(db)
 
 		puts "Here is the list of restaurants that you've already tried:"
@@ -185,11 +184,11 @@ while user_input != 'Exit'
 		puts "Invalid task"
 	end	
 
-	puts "Is there something else you would like to check out today?"
+
+	puts "Anything else you would like to do today: Insert, Delete, Update, Mainlist, Triedlist, Exit"
 	user_input= gets.chomp.capitalize	
+	system "clear"
 end
 
-#Testing Trials
-#So insert, delete, print main list and tried list all work.
 
 
