@@ -14,7 +14,7 @@ function textInGreen(event) {
 }
 
 var text = document.getElementById("activities");
-text.addEventListener("click", textInGreen);
+text.addEventListener("mouseover", textInGreen);
 
 
 function blueText(event) {
@@ -23,4 +23,4 @@ function blueText(event) {
 }
 
 var nextText = document.getElementById("text");
-nextText.addEventListener("mouseover", blueText);
+nextText.addEventListener("click", blueText);
