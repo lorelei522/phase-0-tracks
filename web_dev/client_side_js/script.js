@@ -1,26 +1,24 @@
-function borderInOrange(event) {
-  console.log("Change border around to orange");
-  console.log(event);
-  event.target.style.border = "5px solid orange";
+function borderInOrange(event){
+	console.log("Change border to orange");
+	console.log(event);
+	event.target.style.border = '5px solid orange';
 }
 
-var title = document.getElementById("welcome");
+var title = document.getElementById('Welcome');
 title.addEventListener("click", borderInOrange);
 
-function textInGreen(event) {
-  console.log("Changing the text to green");
-  console.log(event);
-  event.target.style.color = "green";
+function backgroundGreen(event){
+	console.log(event);
+	event.target.style.background = "green";
 }
 
-var text = document.getElementById("activities");
-text.addEventListener("mouseover", textInGreen);
+var background = document.getElementById("page");
+background.addEventListener("mouseover", backgroundGreen);
 
-
-function blueText(event) {
-  console.log("Changing text to red");
-  event.target.style.color = "blue"
+function changeFontColor(event){
+	console.log(event);
+	event.target.style.color = "red";
 }
 
-var nextText = document.getElementById("text");
-nextText.addEventListener("click", blueText);
+var text = document.getElementById("paragraph");
+text.addEventListener("click", changeFontColor);
