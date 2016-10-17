@@ -49,24 +49,18 @@ SQL
 #update TriedOut to true when the user tells the program they have been there.
 #right after move that restaurant from main list to tried list and delete from main list
 update_restaurant_cmd = <<-SQL
-	UPDATE main_list SET tried_out = 1 WHERE id = ? 
-
-	# INSERT INTO triedout(restaurant_name, location, comment, TriedOut) WHERE TriedOut= 1
- # 	SELECT restaurant_name, location, comment, TriedOut
- # 	FROM main_list
-
- # 	DELETE FROM main_list
+	UPDATE main_list SET tried_out = 1 WHERE id = ?; 
 SQL
 
 #Copy restaurant from main_list to triedout when TriedOut in main_list = 1
 #Delete restaurant from main_list after.
-# move_restaurant_cmd = <<-SQL
-# 	INSERT INTO triedout(restaurant_name, location, comment, TriedOut) WHERE TriedOut= 1
-# 	SELECT restaurant_name, location, comment, TriedOut
-# 	FROM main_list
-
-# 	DELETE FROM main_list
-# SQL
+move_restaurant_cmd = <<-SQL
+	INSERT INTO triedout (restaurant_name, location, comment, tried_out) 
+	SELECT main_list.restaurant_name, main_list.location, main_list.comment, main_list.tried_out 
+	FROM main_list WHERE tried_out= 1;
+ 	
+ 	DELETE FROM main_list WHERE tried_out= 1
+SQL
 
 #------------------------------------------------------------------------------------
 #Add methods to complete the above tasks
@@ -82,14 +76,15 @@ def delete_restaurant_main(db, delete_restaurant_cmd, id)
 	db.execute(delete_restaurant_cmd, id)
 end
 
-#method to update TriedOut. Finding it by id
-def update_restaurant(db, update_restaurant_cmd, id)
-	db.execute(update_restaurant_cmd, id)	
+#method to update TriedOut. Finding it by id. Move the restaurant to triedlist
+def update_restaurant(db, update_restaurant_cmd, move_restaurant_cmd, id)
+	db.execute(update_restaurant_cmd, id)
+	db.execute(move_restaurant_cmd)	
 end
 
 #method to move from one list to another on basis of TriedOut being true
 # def move_restaurant(db, move_restaurant_cmd)
-# 	db.execute(move_restaurant_cmd)
+#  	db.execute(move_restaurant_cmd)
 # end
 
 #Show both lists "pretty"
@@ -112,7 +107,8 @@ end
 def print_tried_list(db)
 	triedlist= db.execute("SELECT * FROM triedout")
 	triedlist.each do |restaurant|
-		puts "You tried #{resturant['restaurant_name']} recently!"
+		puts restaurant["id"].to_s + ") "+ restaurant['restaurant_name']
+		puts "Here are your comments about #{restaurant['restaurant_name']}: #{restaurant['comment']}"
 	end	
 end
 
@@ -165,7 +161,8 @@ while user_input != 'Exit'
 		puts "Would you like to update any of these restaurants to having tried it? Choose the number"
 		id= gets.chomp.to_i
 
-		db.execute(update_restaurant_cmd, id)	
+		db.execute(update_restaurant_cmd, id)
+		db.execute(move_restaurant_cmd)	
 
 		puts "Here is your current list to try:"
 		print_main_list(db)
