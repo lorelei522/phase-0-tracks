@@ -184,8 +184,10 @@ while user_input != 'Exit'
 		puts "Invalid task"
 	end	
 
+
 	puts "Anything else you would like to do today: Insert, Delete, Update, Mainlist, Triedlist, Exit"
 	user_input= gets.chomp.capitalize	
+	system "clear"
 end
 
 
