@@ -21,7 +21,7 @@ create_table_cmd = <<-SQL
 		restaurant_name VARCHAR(255),
 		location VARCHAR(255),
 		comment VARCHAR(255),
-		TriedOut BOOLEAN
+		tried_out BOOLEAN
 	)
 SQL
 
@@ -32,13 +32,13 @@ create_table_cmd2 = <<-SQL
 		restaurant_name VARCHAR(255),
 		location VARCHAR(255),
 		comment VARCHAR(255),
-		TriedOut BOOLEAN
+		tried_out BOOLEAN
 	)
 SQL
 
 # Insert new resturants to the main list
 insert_table_cmd = <<-SQL
-	INSERT INTO main_list (restaurant_name, location, comment, TriedOut) VALUES (?, ?, ?, 0)
+	INSERT INTO main_list (restaurant_name, location, comment, tried_out) VALUES (?, ?, ?, 0)
 SQL
 
 #delete restaurants you don't want on the main list anymore
@@ -49,7 +49,7 @@ SQL
 #update TriedOut to true when the user tells the program they have been there.
 #right after move that restaurant from main list to tried list and delete from main list
 update_restaurant_cmd = <<-SQL
-	UPDATE main_list SET TriedOut = 1 WHERE id = ? 
+	UPDATE main_list SET tried_out = 1 WHERE id = ? 
 
 	# INSERT INTO triedout(restaurant_name, location, comment, TriedOut) WHERE TriedOut= 1
  # 	SELECT restaurant_name, location, comment, TriedOut
@@ -74,7 +74,7 @@ SQL
 #method to add restaurants
 #Must reference the variable, the table, name, location and comment
 def insert_restaurants(db, insert_table_cmd, restaurant_name, location, comment)
-		db.execute(insert_table_cmd, [restaurant_name, location, comment])
+	db.execute(insert_table_cmd, [restaurant_name, location, comment])
 end
 
 #method to delete a restaurant from the main_list. Using the ID
@@ -162,10 +162,10 @@ while user_input != 'Exit'
 	elsif user_input== 'Update'
 		puts "Here is your current list:"
 		print_main_list(db)
-		puts "Would you like to update any of these restaurants to having tried? Choose the number"
+		puts "Would you like to update any of these restaurants to having tried it? Choose the number"
 		id= gets.chomp.to_i
 
-		update_restaurant(db, update_restaurant_cmd, id)
+		db.execute(update_restaurant_cmd, id)	
 
 		puts "Here is your current list to try:"
 		print_main_list(db)
