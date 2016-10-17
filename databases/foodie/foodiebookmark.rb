@@ -5,3 +5,12 @@
 # 		Delete resturants from try list.
 # 		After you try a resturant it moves from one table to another & gets deleted from original.
 # 		3 parts to the main list- name, location, comment, triedout
+
+#require sqlite3
+require 'sqlite3'
+
+
+#create the database
+db = SQLite3::Database.new("foodiebookmark.db")
+db.results_as_hash = true
+
