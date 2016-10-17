@@ -70,7 +70,13 @@ def insert_restaurants(db, insert_table_cmd, restaurant_name, location, comment)
 		db.execute(insert_table_cmd, [restaurant_name, location, comment])
 end
 
-#method to delete a restaurant from the main_list
+#method to delete a restaurant from the main_list. Using the ID
 def delete_restaurant_main(db, delete_restaurant_cmd, id)
 	db.execute(delete_restaurant_cmd, id)
 end
+
+#method to update TriedOut. Finding it by id
+def update_restaurant(db, update_restaurant_cmd, id)
+	db.execute(update_restaurant_cmd, id)	
+end
+
