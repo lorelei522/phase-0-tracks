@@ -46,6 +46,13 @@ delete_restaurant_cmd = <<-SQL
 	DELETE FROM main_list WHERE id = ?
 SQL
 
+#update TriedOut to true when the user tells the program they have been there
+update_restaurant_cmd = <<-SQL
+	UPDATE main_list SET TriedOut = 1 WHERE id = ? 
+SQL
+
+
+
 
 
 
