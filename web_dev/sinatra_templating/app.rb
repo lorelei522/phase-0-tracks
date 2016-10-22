@@ -17,6 +17,11 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/students/search_by_campus' do
+	erb :search_by_campus
+end	
+
+
 # create new students via
 # a form
 post '/students' do
@@ -25,3 +30,18 @@ post '/students' do
 end
 
 # add static resources
+
+get '/search_by_campus' do
+	erb :search_by_campus
+end	
+
+# get '/search_results' do
+# 	@student_campus= db.execute("SELECT * FROM students WHERE campus=?", params['campus'])
+# 	erb :results
+# end	
+
+get '/search_results' do
+	#campus= params['campus'].upcase
+	@student_campus= db.execute("SELECT * FROM students WHERE campus=?", params['campus'])
+	erb :results
+end	
