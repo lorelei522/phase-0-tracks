@@ -63,6 +63,18 @@ get '/great_job' do
   end
 end  
 
+# Release 0-3 Route that will add two numbers and show the sum.
+
+get '/add/:num1/:num2' do
+  num1 = params[:num1]
+  num2 = params[:num2]
+  sum = num1.to_i + num2.to_i
+  "Here is your equation: #{num1} + #{num2} = #{sum}"
+end
+
+
+
+
 
 
 
