@@ -72,7 +72,28 @@ get '/add/:num1/:num2' do
   "Here is your equation: #{num1} + #{num2} = #{sum}"
 end
 
+#Bonus: Add a search route. Can search the whole database by age and return the students by age
 
+# add an option if no one in the database has that age
+
+
+get '/search/:search_age' do
+  age = params[:search_age]
+  student_age = db.execute("SELECT * FROM students WHERE age=?", [params[:search_age]])
+  list = ''
+  student_age.each do |student|
+    list << "Name: #{student['name']}<br>"
+    list << "Age: #{student['age']}<br>"
+    list << "Campus: #{student['campus']}<br><br>"
+  end
+
+  if list.empty?
+    "Sorry we don't have any students with that age!"
+  else
+    "Here are the students with the age of #{age} years old:<br><br> #{list}"
+  end
+  
+ end    
 
 
 
