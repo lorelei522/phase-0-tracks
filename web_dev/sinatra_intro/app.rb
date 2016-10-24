@@ -51,7 +51,17 @@ get '/contact' do
   "#{Faker::Address.street_address} <br>#{Faker::Address.city}, #{Faker::Address.state} #{Faker::Address.zip}"
 end 
 
+# Release 0-2 /great_job that will tell the person good job and their name if name not found
+# just good job
 
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!!!"
+  else
+    "Good job!"
+  end
+end  
 
 
 
